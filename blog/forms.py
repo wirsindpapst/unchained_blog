@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 # Additional imports for users:
 from django.contrib.auth.models import User
@@ -26,3 +26,9 @@ class RegistrationForm(UserCreationForm):
             user.save()
 
         return user
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('body',)
