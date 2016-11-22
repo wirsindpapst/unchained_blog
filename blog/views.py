@@ -1,8 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
-from django.shortcuts import redirect
+
+# Additional imports for users:
+from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.template.context_processors import csrf
+from django.shortcuts import render_to_response
+from .forms import RegistrationForm
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -38,3 +45,22 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/accounts/register/complete')
+
+    else:
+        form = RegistrationForm()
+        
+    token = {}
+    token.update(csrf(request))
+    token['form'] = form
+
+    return render_to_response('registration/registration_form.html', token)
+
+def registration_complete(request):
+    return render_to_response('registration/registration_complete.html')
