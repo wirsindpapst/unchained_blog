@@ -1,5 +1,8 @@
 from django.test import TestCase
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 # import unittest
 
 
@@ -19,14 +22,14 @@ class NewUserTestCase(TestCase):
 
 
     def test_user_registration(self):
+        self.driver.implicitly_wait(20)
         self.driver.get("http://127.0.0.1:8000/accounts/register/")
-        self.driver.find_element_by_id('id_username').send_keys('Test234354343')
+        self.driver.find_element_by_id('id_username').send_keys('Test42')
         self.driver.find_element_by_id('id_email').send_keys('test@test.com')
         self.driver.find_element_by_id('id_password1').send_keys('Unchained')
         self.driver.find_element_by_id('id_password2').send_keys('Unchained')
         self.driver.find_element_by_id('sign_up').click()
-        # self.assertIn("http://127.0.0.1:8000", self.driver.current_url)
-        bodyText = self.driver.find_element_by_tag_name('body').text
+        bodyText = self.driver.find_element_by_id('message').text
         self.assertEqual("Thanks for registering. You are now logged in.", bodyText)
 
 
