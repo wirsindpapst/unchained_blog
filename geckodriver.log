@@ -563,3 +563,6 @@ JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9
 1479833998630	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
 1479833998633	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57595
 1479833999255	Marionette	INFO	Listening on port 57595
+Usage:
+    geckodriver [OPTIONS]
+geckodriver: Unknown option --port
