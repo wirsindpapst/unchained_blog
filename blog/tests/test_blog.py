@@ -10,7 +10,6 @@ from django.contrib.auth.models import User
 class BlogTestCase(LiveServerTestCase):
 
     def setUp(self):
-        self.factory = RequestFactory()
         self.user = User.objects.create(username="jen")
         self.post = Post.objects.create(author=self.user, title="Test title", text="Hello world!")
         self.browser = webdriver.Firefox()
