@@ -20,3 +20,4 @@ class CommentsTestCase(TestCase):
         comment = Comment.objects.create(author=me, body="great blog!", post=post)
         self.assertEqual(comment.body, "great blog!")
         self.assertEqual(comment.author, me)
+    
