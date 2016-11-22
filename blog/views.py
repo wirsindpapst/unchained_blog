@@ -9,10 +9,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
 from .forms import RegistrationForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
@@ -50,12 +52,17 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/accounts/register/complete')
+            new_user = form.save()
+            messages.info(request, "Thanks for registering. You are now logged in.")
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
+            return HttpResponseRedirect('/')
 
     else:
         form = RegistrationForm()
-        
+
     token = {}
     token.update(csrf(request))
     token['form'] = form
