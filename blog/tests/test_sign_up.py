@@ -2,8 +2,6 @@ from django.test import TestCase
 from selenium import webdriver
 # import unittest
 
-
-
 class NewUserTestCase(TestCase):
 
     def setUp(self):
