@@ -1,2 +1,5 @@
 # ignore __pycache__ files
 *.pyc
+
+#ignore virtual environment
+myvenv/
