@@ -1,13 +1,18 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from django.test import LiveServerTestCase
 from selenium import webdriver
-from . import factories
+from blog.models import Post
+from django.contrib.auth.models import User
+
 
 #test: if index has blog posts, if can create a new post,
 
 class BlogTestCase(LiveServerTestCase):
 
     def setUp(self):
+        self.factory = RequestFactory()
+        self.user = User.objects.create(username="jen")
+        self.post = Post.objects.create(author=self.user, title="Test title", text="Hello world!")
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(2)
 
@@ -30,9 +35,10 @@ class BlogTestCase(LiveServerTestCase):
         Test if index displays the posts
         """
         home_page = self.browser.get(self.live_server_url + '/')
-        post = PostFactory()
-        post_element = self.browser.find_element_by_css_selector('.post a')
-        self.assertEqual('Test Title', post_element.text)
+        print(self.post.title)
+        post_element = self.browser.find_element_by_css_selector('.post-title')
+        self.assertEqual(post.title, post_element.text)
+
 
     # def test_create_new_posts(self):
     #     """
