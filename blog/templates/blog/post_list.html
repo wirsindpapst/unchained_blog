@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load emoji_tags %}
 
 {% block content %}
     {% for post in posts %}
@@ -6,8 +7,8 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
-            <h1><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <h1><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h1>
+            <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
         </div>
     {% endfor %}
 {% endblock %}

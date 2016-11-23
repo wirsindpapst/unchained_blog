@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'emoji',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -137,3 +138,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#EMOJIS settings
+EMOJI_REPLACE_HTML_ENTITIES = True
