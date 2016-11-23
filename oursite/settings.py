@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import sys
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -88,6 +89,14 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'unchained_blog_test',
+    }
+
+
 
 
 # Password validation
