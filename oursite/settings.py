@@ -32,6 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,6 +80,8 @@ WSGI_APPLICATION = 'oursite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+
+
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -86,6 +90,10 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
+
+
 
 
 # Password validation

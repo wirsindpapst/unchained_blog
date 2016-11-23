@@ -17,14 +17,20 @@ class BlogTestCase(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_comments_render_to_page(self):
+
+    def test_comments_can_be_created_in_the_browser(self):
         """
         Need do build in form elements once live - not currently a proper feature test yet
         """
         comment = Comment.objects.create(author=self.user, body="great blog!", post=self.post)
-        test_page = self.browser.get(self.live_server_url + '/post/5')
+        comment_id = comment.id
+        test_page = self.browser.get(self.live_server_url + '/post/' + str(comment_id))
+        test_text = "Test comment #1"
+        self.browser.find_element_by_id('comment_text').send_keys(test_text)
+        self.browser.find_element_by_id('post_comment_btn').click()
+        test_page = self.browser.get(self.live_server_url + comment_id)
         target_text = self.browser.find_element_by_id('comment-body')
-        self.assertEqual(comment.body, target_text.text)
+        self.assertEqual(target_text, test_text)
 
 
 
