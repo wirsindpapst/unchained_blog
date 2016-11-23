@@ -1,5 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+
+class User(models.Model):
+    User._meta.get_field('email')._unique = True
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
