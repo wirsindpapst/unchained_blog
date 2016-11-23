@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.utils import timezone
 from .models import Post, Comment
 from .forms import PostForm
+from django.contrib.auth.models import User
 
 # Additional imports for users:
 from django.http import HttpResponseRedirect
@@ -94,15 +95,13 @@ def register(request):
 def registration_complete(request):
     return render_to_response('registration/registration_complete.html')
 
-def comment_new(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+
+def comment_delete(request, comment_id, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if (comment.author_id == request.user.id) or (post.author_id == request.user.id):
+        comment.delete()
+        return redirect('/post/'+post_id)
     else:
-        form = PostForm()
-    return render(request, 'blog/post_new.html', {'form': form})
+        messages.info(request, "You cannot delete this comment.")
+        return redirect('/post/'+post_id)
