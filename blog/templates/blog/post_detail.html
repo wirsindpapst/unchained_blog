@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 
+
 {% block content %}
+{% load emoji_tags %}
+
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -10,8 +13,8 @@
         {% if user.is_authenticated and post.author_id == user.id %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <h1 id="post-detail-title">{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
+        <p> {{ post.text|linebreaksbr|emoji_replace }}</p>
     </div>
 
     {% for comment in comments %}
@@ -20,7 +23,7 @@
                 {{ comment.created_date }}
             </div>
             <div id="comment-body">
-              <p>{{ comment.body|linebreaksbr }}</p>
+              <p>{{ comment.body|linebreaksbr|emoji_replace }}</p>
             </div>
         </div>
     {% endfor %}
