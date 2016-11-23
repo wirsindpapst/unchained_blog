@@ -31,7 +31,6 @@ class BlogTestCase(LiveServerTestCase):
         post_element = self.browser.find_element_by_css_selector('.post-title')
         self.assertEqual(self.post.title, post_element.text)
 
-
     def test_valid_form(self):
         w = Post.objects.create(title='Foo', text='Bar', author_id=self.user.id)
         data = {'title': w.title, 'text': w.text, 'author_id': w.author_id}
