@@ -17,6 +17,16 @@ So that I can connect to other bloggers
 I would like to be able to post comments on other blogs.
 ```
 ```
+As a blogger
+So that I can edit my text
+I would like to be able to edit my blog posts.
+```
+```
+As a blogger
+So that I can maintain my blog
+I would like to be able to delete blog posts.
+```
+```
 As a user
 So that my page looks more interesting
 I would like to be able to post images to my posts.

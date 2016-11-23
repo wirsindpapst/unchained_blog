@@ -1,6 +1,6 @@
-h1 a {
+#blog-title {
     color: #FCA205;
-    font-family: 'Lobster';
+    font-family: 'Permanent Marker', cursive;
 }
 
 body {
@@ -8,23 +8,27 @@ body {
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #0FBF59;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 15px 15px 15px 30px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 48pt;
     text-decoration: none;
 }
 
+.user-links {
+  color: #ffffff
+}
+
 .content {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .date {
