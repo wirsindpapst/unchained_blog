@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+LOGIN_REDIRECT_URL = '/'
+
 AUTHENTICATION_BACKENDS = [
   'django.contrib.auth.backends.ModelBackend',
 ]
