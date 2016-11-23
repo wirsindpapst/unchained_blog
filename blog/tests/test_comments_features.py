@@ -27,7 +27,7 @@ class BlogTestCase(LiveServerTestCase):
         Need do build in form elements once live
         """
         comment = Comment.objects.create(author=self.user, body="great blog!", post=self.post)
-        test_page = self.browser.get(self.live_server_url + 'post/1/')
+        test_page = self.browser.get(self.live_server_url + '/post/1/')
         print(self.post.title)
-        target_text = self.browser.find_element_by_css_selector('.comment-body')
+        target_text = self.browser.find_element_by_css_selector('comment-body')
         self.assertEqual(comment.body, target_text.text)
