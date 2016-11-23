@@ -9,13 +9,12 @@
     </head>
     <body>
         <div class="page-header">
-
-
             {% if user.is_authenticated %}
                 <a href='/logout'>Log out</a>
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% else %}
                 <a href='/login'>Log in</a>
+                <a href='/accunts/register'>Sign up</a>
             {% endif %}
             {% if messages %}
                <ul id='message' class="messages">
