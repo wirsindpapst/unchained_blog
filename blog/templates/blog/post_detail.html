@@ -7,10 +7,27 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and post.author_id == user.id %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+
+    {% for comment in comments %}
+        <div class="comments">
+            <div class="comment-details">
+                {{ comment.created_date }}
+            </div>
+            <div id="comment-body">
+              <p>{{ comment.body|linebreaksbr }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <h1>Add a comment</h1>
+    <form method="POST" class="comment-form">{% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit" class="save btn btn-default">Post comment</button>
+    </form>
 {% endblock %}
