@@ -1,32 +1,33 @@
 {% extends 'blog/base.html' %}
 
-
 {% block content %}
 {% load emoji_tags %}
-
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                {{ post.published_date }}
+                <p> {{ post.published_date }} </p>
+                <p>{{ user.username }} </p>
             </div>
         {% endif %}
         {% if user.is_authenticated and post.author_id == user.id %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
-        <p> {{ post.text|linebreaksbr|emoji_replace }}</p>
+        <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
     </div>
 
     {% for comment in comments %}
         <div class="comments">
-            <div class="comment-details">
-                {{ comment.created_date }}
+            <div class="comment-details" style="padding-top:15">
+                <h6>{{ user.username }} commented</h6>
+                <h6>on {{ comment.created_date }}</h6>
             </div>
             <div id="comment-body">
-              <p>{{ comment.body|linebreaksbr|emoji_replace }}</p>
+                <h4>{{ comment.body|linebreaksbr|emoji_replace }}</h4>
             </div>
-            {% if comment.author_id == user.id or post.author_id == user.id %}
+            <div style="display: inline-block">{% if comment.author_id == user.id or post.author_id == user.id %}
                 <a class="btn btn-default" href="{% url 'comment_delete' post_id=post.pk comment_id=comment.pk %}">Delete Comment</a>
+            </div>
             {% endif %}
 
         </div>
@@ -39,5 +40,4 @@
             <button type="submit" class="save btn btn-default">Post comment</button>
         </form>
     {% endif %}
-
 {% endblock %}
