@@ -13,6 +13,7 @@ class BlogTestCase(LiveServerTestCase):
     def setUp(self):
         self.user = User.objects.create(username="jen")
         self.post = Post.objects.create(author=self.user, title="Test title", text="Hello world!")
+        self.post.publish()
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(2)
 
@@ -20,15 +21,15 @@ class BlogTestCase(LiveServerTestCase):
         self.browser.quit()
 
     def test_blog_title(self):
-        """
-        Test that a user can search for post
-        """
-        # blog home page
         home_page = self.browser.get(self.live_server_url + '/')
-        # site heading
         brand_element = self.browser.find_element_by_css_selector('.page-header')
         print(brand_element.text)
         self.assertEqual('Unchained Blog', brand_element.text)
+
+    def test_index_has_posts(self):
+        home_page = self.browser.get(self.live_server_url + '/')
+        post_element = self.browser.find_element_by_css_selector('.post-title')
+        self.assertEqual(self.post.title, post_element.text)
 
 
     def test_valid_form(self):

@@ -5,3 +5,6 @@ get-pip.py
 
 # ignore virtual environment
 myvenv/
+
+# ignore geckodriver.log
+geckodriver.log
