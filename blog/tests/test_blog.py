@@ -49,7 +49,7 @@ class BlogTestCase(LiveServerTestCase):
     def register_user(self):
         self.browser.implicitly_wait(20)
         self.browser.get(self.live_server_url + '/accounts/register')
-        self.browser.find_element_by_id('id_username').send_keys('TestUser')
+        self.browser.find_element_by_id('id_username').send_keys('TestUser1')
         self.browser.find_element_by_id('id_email').send_keys('test@test.com')
         self.browser.find_element_by_id('id_password1').send_keys('Unchained')
         self.browser.find_element_by_id('id_password2').send_keys('Unchained')

@@ -13,7 +13,7 @@ class BlogTestCase(LiveServerTestCase):
         self.post = Post.objects.create(author=self.user, title='A test blog', text="Whatever")
         self.post.publish()
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(2)
+        self.browser.implicitly_wait(20)
 
     def tearDown(self):
         self.browser.quit()
