@@ -22,6 +22,10 @@
             <div id="comment-body">
               <p>{{ comment.body|linebreaksbr }}</p>
             </div>
+            {% if comment.author_id == user.id or post.author_id == user.id %}
+                <a class="btn btn-default" href="{% url 'comment_delete' post_id=post.pk comment_id=comment.pk %}">Delete Comment</a>
+            {% endif %}
+
         </div>
     {% endfor %}
 
