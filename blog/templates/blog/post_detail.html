@@ -19,7 +19,7 @@
             <div class="comment-details">
                 {{ comment.created_date }}
             </div>
-            <div class="comment-body">
+            <div id="comment-body">
               <p>{{ comment.body|linebreaksbr }}</p>
             </div>
         </div>
@@ -31,5 +31,3 @@
         <button type="submit" class="save btn btn-default">Post comment</button>
     </form>
 {% endblock %}
-
-    
