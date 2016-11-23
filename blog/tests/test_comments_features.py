@@ -25,3 +25,33 @@ class BlogTestCase(LiveServerTestCase):
         test_page = self.browser.get(self.live_server_url + '/post/5')
         target_text = self.browser.find_element_by_id('comment-body')
         self.assertEqual(comment.body, target_text.text)
+
+    def test_comments_can_be_created_in_the_browser(self):
+        """
+        Need do build in form elements once live - not currently a proper feature test yet
+        """
+        # comment = Comment.objects.create(author=self.user, body="great blog!", post=self.post)
+        test_page = self.browser.get(self.live_server_url + '/post/5')
+        test_text = "Test comment #1"
+        self.driver.find_element_by_id('comment_text').send_keys(test_text)
+        self.driver.find_element_by_id('post_comment_btn').click()
+        test_page = self.browser.get(self.live_server_url + '/post/5')
+        target_text = self.browser.find_element_by_id('comment-body')
+        self.assertEqual(target_text, test_text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #
