@@ -19,12 +19,12 @@ class BlogTestCase(LiveServerTestCase):
         self.browser.get(self.live_server_url + '/')
 
 
-    # def tearDown(self):
-    #     self.browser.quit()
+    def tearDown(self):
+        self.browser.quit()
 
     def test_blog_title(self):
         title_element = self.browser.find_element_by_css_selector('.page-header')
-        self.assertEqual('Unchained Blog', title_element.text)
+        self.assertEqual('Log in Sign up\nUnchained Blog', title_element.text)
 
     def test_index_has_posts(self):
         home_page = self.browser.get(self.live_server_url + '/')
