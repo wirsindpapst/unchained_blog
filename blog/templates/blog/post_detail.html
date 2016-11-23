@@ -25,9 +25,12 @@
         </div>
     {% endfor %}
 
-    <h1>Add a comment</h1>
-    <form method="POST" class="comment-form">{% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit" class="save btn btn-default">Post comment</button>
-    </form>
+    {% if user.is_authenticated %}
+        <h1>Add a comment</h1>
+        <form method="POST" class="comment-form">{% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="save btn btn-default">Post comment</button>
+        </form>
+    {% endif %}
+
 {% endblock %}
