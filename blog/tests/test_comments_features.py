@@ -19,7 +19,7 @@ class BlogTestCase(LiveServerTestCase):
 
     def test_comments_render_to_page(self):
         """
-        Need do build in form elements once live - not currently a proper feature test
+        Need do build in form elements once live - not currently a proper feature test yet
         """
         comment = Comment.objects.create(author=self.user, body="great blog!", post=self.post)
         test_page = self.browser.get(self.live_server_url + '/post/5')
