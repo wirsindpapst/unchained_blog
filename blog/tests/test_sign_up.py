@@ -22,7 +22,7 @@ class NewUserTestCase(TestCase):
     def test_user_registration(self):
         self.driver.implicitly_wait(20)
         self.driver.get("http://127.0.0.1:8000/accounts/register/")
-        self.driver.find_element_by_id('id_username').send_keys('Test42111')
+        self.driver.find_element_by_id('id_username').send_keys('Test')
         self.driver.find_element_by_id('id_email').send_keys('test@test.com')
         self.driver.find_element_by_id('id_password1').send_keys('Unchained')
         self.driver.find_element_by_id('id_password2').send_keys('Unchained')
