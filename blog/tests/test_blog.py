@@ -3,6 +3,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from blog.models import Post
 from django.contrib.auth.models import User
+from blog.forms import PostForm
 
 
 #test: if index has blog posts, if can create a new post,
@@ -29,25 +30,9 @@ class BlogTestCase(LiveServerTestCase):
         print(brand_element.text)
         self.assertEqual('Unchained Blog', brand_element.text)
 
-    def test_index_has_posts(self):
-        """
-        Test if index displays the posts
-        """
-        home_page = self.browser.get(self.live_server_url + '/')
-        print(self.post.title)
-        post_element = self.browser.find_element_by_css_selector('.post-title')
-        self.assertEqual(post.title, post_element.text)
 
-
-    # def test_create_new_posts(self):
-    #     """
-    #     Test if index displays the posts
-    #     """
-    #     # blog home page
-    #     home_page = self.browser.get(self.live_server_url + '/post/new')
-    #
-    #     title_input.send_keys('saxophone')
-    #     instrument_input.submit()
-    #     brand_element = self.browser.find_element_by_css_selector('.page-header')
-    #     print(brand_element.text)
-    #     self.assertEqual('Unchained Blog', brand_element.text)
+    def test_valid_form(self):
+        w = Post.objects.create(title='Foo', text='Bar', author_id=self.user.id)
+        data = {'title': w.title, 'text': w.text, 'author_id': w.author_id}
+        form = PostForm(data=data)
+        self.assertTrue(form.is_valid())
