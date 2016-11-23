@@ -1368,3 +1368,375 @@ JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9
 1479897231404	mozprofile::profile	INFO	Using profile path /var/folders/_9/_y04h0714kj_4hzd50n_c0m00000gn/T/rust_mozprofile.sLCB3T7lcfj0
 1479897231405	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
 1479897231407	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51716
+1479898481351	geckodriver	INFO	Listening on 127.0.0.1:51224
+1479898482268	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.xfhl9tqHZQZZ
+1479898482269	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898482273	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51233
+1479898483172	Marionette	INFO	Listening on port 51233
+1479898485055	geckodriver	INFO	Listening on 127.0.0.1:51259
+1479898485940	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.BYEm6srjONlO
+1479898485942	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898485947	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51268
+1479898487276	Marionette	INFO	Listening on port 51268
+1479898489384	geckodriver	INFO	Listening on 127.0.0.1:51307
+1479898490300	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Si22HkPfOlr7
+1479898490302	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898490306	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51316
+1479898490954	Marionette	INFO	Listening on port 51316
+1479898492798	geckodriver	INFO	Listening on 127.0.0.1:51344
+1479898493685	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.TqkftgJvZC25
+1479898493687	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898493691	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51353
+1479898494323	Marionette	INFO	Listening on port 51353
+1479898496695	geckodriver	INFO	Listening on 127.0.0.1:51391
+1479898497595	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Gs1WxPSh5FSu
+1479898497597	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898497600	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51401
+1479898498319	Marionette	INFO	Listening on port 51401
+1479898500555	geckodriver	INFO	Listening on 127.0.0.1:51440
+1479898501487	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.zMUwRXgEEgBs
+1479898501489	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479898501492	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51449
+1479898502194	Marionette	INFO	Listening on port 51449
+1479899049598	geckodriver	INFO	Listening on 127.0.0.1:51600
+1479899050541	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.99Ca7GtnMzxL
+1479899050543	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899050547	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51609
+1479899051454	Marionette	INFO	Listening on port 51609
+1479899054273	geckodriver	INFO	Listening on 127.0.0.1:51653
+1479899055182	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.AJQ3oni6MSCk
+1479899055183	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899055187	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51662
+1479899055976	Marionette	INFO	Listening on port 51662
+1479899058283	geckodriver	INFO	Listening on 127.0.0.1:51703
+1479899059195	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.1mr3T6gAGdK5
+1479899059197	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899059200	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51712
+1479899059984	Marionette	INFO	Listening on port 51712
+1479899061927	geckodriver	INFO	Listening on 127.0.0.1:51738
+1479899062835	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.UoTgqTMpL0g6
+1479899062837	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899062840	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51747
+1479899063709	Marionette	INFO	Listening on port 51747
+1479899134093	geckodriver	INFO	Listening on 127.0.0.1:51788
+1479899135038	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.vq0I15qGUjnN
+1479899135039	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899135043	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51797
+1479899135664	Marionette	INFO	Listening on port 51797
+1479899137972	geckodriver	INFO	Listening on 127.0.0.1:51834
+1479899138889	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.VhGIOH59mMXa
+1479899138891	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899138894	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51843
+1479899139559	Marionette	INFO	Listening on port 51843
+1479899142082	geckodriver	INFO	Listening on 127.0.0.1:51894
+1479899143010	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.LTa2MbasGqfY
+1479899143011	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899143015	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51903
+1479899144012	Marionette	INFO	Listening on port 51903
+1479899146487	geckodriver	INFO	Listening on 127.0.0.1:51951
+1479899147413	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.LrKShzhhVhDW
+1479899147415	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899147418	geckodriver::marionette	INFO	Connecting to Marionette on localhost:51961
+1479899148274	Marionette	INFO	Listening on port 51961
+1479899184215	geckodriver	INFO	Listening on 127.0.0.1:52019
+1479899185156	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.jCqPzS3SrYpm
+1479899185158	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899185162	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52028
+1479899186219	Marionette	INFO	Listening on port 52028
+1479899188840	geckodriver	INFO	Listening on 127.0.0.1:52075
+1479899189762	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.14eKveSw5J3p
+1479899189764	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899189768	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52084
+1479899190885	Marionette	INFO	Listening on port 52084
+1479899193765	geckodriver	INFO	Listening on 127.0.0.1:52139
+1479899194694	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.vHzpvYQFLQat
+1479899194695	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899194700	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52148
+1479899195479	Marionette	INFO	Listening on port 52148
+1479899199810	geckodriver	INFO	Listening on 127.0.0.1:52190
+1479899200741	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.NemF6PiQDbGZ
+1479899200742	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899200746	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52199
+1479899201614	Marionette	INFO	Listening on port 52199
+1479899329041	geckodriver	INFO	Listening on 127.0.0.1:52268
+1479899329996	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.eN6Bnf57kDPz
+1479899329997	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899330001	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52277
+1479899330659	Marionette	INFO	Listening on port 52277
+1479899332802	geckodriver	INFO	Listening on 127.0.0.1:52316
+1479899333723	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.TeHFOzOd7qMi
+1479899333725	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899333729	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52325
+1479899334299	Marionette	INFO	Listening on port 52325
+1479899336526	geckodriver	INFO	Listening on 127.0.0.1:52369
+1479899337468	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Rj1iEX8amFCj
+1479899337470	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899337473	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52378
+1479899338060	Marionette	INFO	Listening on port 52378
+1479899340019	geckodriver	INFO	Listening on 127.0.0.1:52413
+1479899340960	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.mqozRDHWk598
+1479899340961	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899340964	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52422
+1479899341532	Marionette	INFO	Listening on port 52422
+1479899373874	geckodriver	INFO	Listening on 127.0.0.1:52464
+1479899374817	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.020OIkl2DjsO
+1479899374818	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899374822	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52473
+1479899375435	Marionette	INFO	Listening on port 52473
+1479899377598	geckodriver	INFO	Listening on 127.0.0.1:52510
+1479899378518	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Ej7CDWx5EEbw
+1479899378520	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899378524	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52519
+1479899379129	Marionette	INFO	Listening on port 52519
+1479899381395	geckodriver	INFO	Listening on 127.0.0.1:52563
+1479899382323	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.PcF0Rbo0oqCP
+1479899382325	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899382328	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52572
+1479899382958	Marionette	INFO	Listening on port 52572
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899390560	geckodriver	INFO	Listening on 127.0.0.1:52616
+1479899391483	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.MaqNB33ugkff
+1479899391484	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899391489	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52625
+1479899392104	Marionette	INFO	Listening on port 52625
+1479899435145	geckodriver	INFO	Listening on 127.0.0.1:52665
+1479899436036	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.HxRUlDJG3BGk
+1479899436038	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899436042	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52674
+1479899436646	Marionette	INFO	Listening on port 52674
+1479899438922	geckodriver	INFO	Listening on 127.0.0.1:52710
+1479899439855	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.fAA3D92HCTni
+1479899439857	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899439860	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52719
+1479899440507	Marionette	INFO	Listening on port 52719
+1479899442910	geckodriver	INFO	Listening on 127.0.0.1:52765
+1479899443839	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.kWMyrNEOZqWG
+1479899443840	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899443843	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52774
+1479899444437	Marionette	INFO	Listening on port 52774
+1479899446337	geckodriver	INFO	Listening on 127.0.0.1:52809
+1479899447281	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.IeR29X6CIQbA
+1479899447283	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899447287	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52819
+1479899447846	Marionette	INFO	Listening on port 52819
+1479899485707	geckodriver	INFO	Listening on 127.0.0.1:52870
+1479899486661	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.wzyMqOswrigi
+1479899486662	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899486666	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52879
+1479899487369	Marionette	INFO	Listening on port 52879
+1479899489567	geckodriver	INFO	Listening on 127.0.0.1:52918
+1479899490491	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.MOs3MhUaBhYg
+1479899490493	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899490497	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52927
+1479899491110	Marionette	INFO	Listening on port 52927
+1479899493457	geckodriver	INFO	Listening on 127.0.0.1:52971
+1479899494394	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.YNLt2wXfJjGh
+1479899494395	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899494397	geckodriver::marionette	INFO	Connecting to Marionette on localhost:52980
+1479899495064	Marionette	INFO	Listening on port 52980
+1479899497304	geckodriver	INFO	Listening on 127.0.0.1:53021
+1479899498227	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.2CRhZzkIXLvR
+1479899498229	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899498232	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53030
+1479899498923	Marionette	INFO	Listening on port 53030
+1479899562854	geckodriver	INFO	Listening on 127.0.0.1:53074
+1479899563797	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Hd6qB3NbRm3A
+1479899563798	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899563802	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53083
+1479899564389	Marionette	INFO	Listening on port 53083
+1479899566710	geckodriver	INFO	Listening on 127.0.0.1:53120
+1479899567627	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.8axxUBZW6i0x
+1479899567629	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899567633	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53129
+1479899568220	Marionette	INFO	Listening on port 53129
+1479899570571	geckodriver	INFO	Listening on 127.0.0.1:53174
+1479899571505	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.EfsGgkspnF7z
+1479899571507	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899571510	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53183
+1479899572135	Marionette	INFO	Listening on port 53183
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899594884	geckodriver	INFO	Listening on 127.0.0.1:53252
+1479899595804	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.kdxtxeqxEMSJ
+1479899595806	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899595811	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53261
+1479899596473	Marionette	INFO	Listening on port 53261
+1479899620548	geckodriver	INFO	Listening on 127.0.0.1:53301
+1479899621505	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.VSXJZkznJj9e
+1479899621507	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899621511	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53310
+1479899622111	Marionette	INFO	Listening on port 53310
+1479899624157	geckodriver	INFO	Listening on 127.0.0.1:53346
+1479899625093	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.M7npwzrI36yu
+1479899625095	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899625099	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53355
+1479899625750	Marionette	INFO	Listening on port 53355
+1479899628686	geckodriver	INFO	Listening on 127.0.0.1:53403
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899629614	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.dJLO4R3M384i
+1479899629615	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899629619	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53415
+1479899630586	Marionette	INFO	Listening on port 53415
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899645290	geckodriver	INFO	Listening on 127.0.0.1:53491
+1479899646212	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.1M7URecrb5B0
+1479899646213	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899646217	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53501
+1479899646901	Marionette	INFO	Listening on port 53501
+1479899713996	geckodriver	INFO	Listening on 127.0.0.1:53548
+1479899714942	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.PbnJfAR3XSWM
+1479899714944	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899714947	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53557
+1479899715552	Marionette	INFO	Listening on port 53557
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899723028	geckodriver	INFO	Listening on 127.0.0.1:53601
+1479899723977	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.ywrB16dTMhEI
+1479899723978	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899723982	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53610
+1479899724633	Marionette	INFO	Listening on port 53610
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899732140	geckodriver	INFO	Listening on 127.0.0.1:53663
+1479899733090	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.aNyDvV9LPUS2
+1479899733092	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899733097	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53672
+1479899733846	Marionette	INFO	Listening on port 53672
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899756731	geckodriver	INFO	Listening on 127.0.0.1:53740
+1479899757670	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.zuCFEajS1Sup
+1479899757671	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899757677	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53749
+1479899758425	Marionette	INFO	Listening on port 53749
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899801681	geckodriver	INFO	Listening on 127.0.0.1:53832
+1479899802626	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.GKgwNPf83Ac6
+1479899802629	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899802634	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53841
+1479899803431	Marionette	INFO	Listening on port 53841
+1479899807069	geckodriver	INFO	Listening on 127.0.0.1:53882
+1479899807934	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.vEVRrfUUEsO0
+1479899807936	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899807939	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53892
+1479899808905	Marionette	INFO	Listening on port 53892
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899812413	geckodriver	INFO	Listening on 127.0.0.1:53946
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899813348	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.RslDSwUwzDuQ
+1479899813351	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899813357	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53956
+1479899814349	Marionette	INFO	Listening on port 53956
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899842385	geckodriver	INFO	Listening on 127.0.0.1:54037
+1479899843325	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.WqKQ38khgFNX
+1479899843327	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899843332	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54046
+1479899844076	Marionette	INFO	Listening on port 54046
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.highlighter30
+1479899873952	geckodriver	INFO	Listening on 127.0.0.1:54099
+1479899874887	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.BMC8GGRnLJ8G
+1479899874889	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899874893	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54108
+1479899875606	Marionette	INFO	Listening on port 54108
+1479899877779	geckodriver	INFO	Listening on 127.0.0.1:54146
+1479899878699	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.C1XGgmvuOnqK
+1479899878700	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899878704	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54155
+1479899879271	Marionette	INFO	Listening on port 54155
+1479899881366	geckodriver	INFO	Listening on 127.0.0.1:54198
+1479899882311	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Dma33t3dsbeq
+1479899882313	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899882316	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54208
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899883006	Marionette	INFO	Listening on port 54208
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899885883	geckodriver	INFO	Listening on 127.0.0.1:54270
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899886809	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.PEJSWQ1Pp5Yc
+1479899886810	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899886812	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54282
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+JavaScript error: resource://app/modules/UITour.jsm, line 766: TypeError: window is null
+1479899887517	Marionette	INFO	Listening on port 54282
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899987964	geckodriver	INFO	Listening on 127.0.0.1:54369
+1479899988914	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.iIoAVDIEpcAj
+1479899988916	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899988919	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54378
+1479899989680	Marionette	INFO	Listening on port 54378
+1479899991969	geckodriver	INFO	Listening on 127.0.0.1:54418
+1479899992920	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.1dzOTdbbPlB0
+1479899992921	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899992925	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54427
+1479899993701	Marionette	INFO	Listening on port 54427
+1479899996115	geckodriver	INFO	Listening on 127.0.0.1:54476
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1479899997051	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.XWxJLQx28SDF
+1479899997053	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479899997055	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54487
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479899997923	Marionette	INFO	Listening on port 54487
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479900021208	geckodriver	INFO	Listening on 127.0.0.1:54568
+1479900022157	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.xCKyUSMeVCQG
+1479900022158	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900022162	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54577
+1479900022763	Marionette	INFO	Listening on port 54577
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479900119153	geckodriver	INFO	Listening on 127.0.0.1:54668
+1479900120095	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.g6FGuu4luIMO
+1479900120097	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900120100	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54677
+1479900120688	Marionette	INFO	Listening on port 54677
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1479900177004	geckodriver	INFO	Listening on 127.0.0.1:54757
+1479900177951	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.1zdonti5rcEs
+1479900177952	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900177956	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54766
+1479900178556	Marionette	INFO	Listening on port 54766
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479900277481	geckodriver	INFO	Listening on 127.0.0.1:54862
+1479900278433	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Ed8p2j87tOgx
+1479900278435	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900278438	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54872
+1479900279028	Marionette	INFO	Listening on port 54872
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479900295466	geckodriver	INFO	Listening on 127.0.0.1:54915
+1479900296413	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.Tu8P2iyw1Bv7
+1479900296414	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900296418	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54924
+1479900297043	Marionette	INFO	Listening on port 54924
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+1479900383478	geckodriver	INFO	Listening on 127.0.0.1:55023
+1479900384426	mozprofile::profile	INFO	Using profile path /var/folders/hy/stsfp9655mbcslt5t71vxljw0000gn/T/rust_mozprofile.zyDQLpGgvBLA
+1479900384427	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479900384431	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55032
+1479900385110	Marionette	INFO	Listening on port 55032
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+console.error: 
+  Protocol error (noSuchActor): No such actor for ID: server1.conn0.highlighter30
