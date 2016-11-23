@@ -368,3 +368,17 @@ JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9
 1479903142408	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57304
 1479903142973	Marionette	INFO	Listening on port 57304
 JavaScript error: chrome://browser/content/browser-safebrowsing.js, line 16: TypeError: gBrowser is null
+1479916735998	geckodriver	INFO	Listening on 127.0.0.1:61288
+1479916736953	mozprofile::profile	INFO	Using profile path /var/folders/_9/_y04h0714kj_4hzd50n_c0m00000gn/T/rust_mozprofile.Tkvxf3MJthji
+1479916736954	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479916737006	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61297
+1479916740001 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: id_password1, tagName: INPUT, className: 
+1479916740028 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: id_password2, tagName: INPUT, className: 
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1479916766608	geckodriver	INFO	Listening on 127.0.0.1:61359
+1479916767563	mozprofile::profile	INFO	Using profile path /var/folders/_9/_y04h0714kj_4hzd50n_c0m00000gn/T/rust_mozprofile.plbecs6lmb28
+1479916767565	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1479916767567	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61368
+1479916770320 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: id_password1, tagName: INPUT, className: 
+1479916770349 Marionette: Element does not have a correct accessibility role and may not be manipulated via the accessibility API -> id: id_password2, tagName: INPUT, className: 
+JavaScript warning: https://normandy.cdn.mozilla.net/static/bundles/selfrepair-9e26e649d827af164113.a0bc6be53ed8.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
