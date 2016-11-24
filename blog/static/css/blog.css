@@ -58,12 +58,12 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-.list-image {
-  width:150px;
-  height:auto;
+.post .list-image {
+  width: 150px;
+  height: auto;
 }
 
-.detail-image {
-  width:250px;
-  height:auto;
+.post .detail-image {
+  width: 250px;
+  height: auto;
 }
