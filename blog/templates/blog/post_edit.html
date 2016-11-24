@@ -1,4 +1,6 @@
 {% extends 'blog/base.html' %}
+{% load static %}
+
 
 {% block content %}
     <h1>Edit post</h1>
@@ -6,4 +8,6 @@
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+
+<script src="{% static "javascript/post_edit.js" %}"></script>
 {% endblock %}
