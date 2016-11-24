@@ -98,8 +98,6 @@ if 'test' in sys.argv:
     }
 
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -141,3 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #EMOJIS settings
 EMOJI_REPLACE_HTML_ENTITIES = True
+
+#Image upload
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')

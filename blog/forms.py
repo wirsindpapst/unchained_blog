@@ -9,7 +9,8 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text',)
+        image = forms.ImageField()
+        fields = ('title', 'text', 'image')
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -20,11 +21,8 @@ class RegistrationForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
-        # user.email = self.cleaned_data['email']
-
         if commit:
             user.save()
-
         return user
 
 class CommentForm(forms.ModelForm):
