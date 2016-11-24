@@ -2,11 +2,14 @@
 {% load emoji_tags %}
 
 {% block content %}
+    {% if not posts %}
+      <h2>You have no saved posts.</h2>
+    {% endif %}
     {% for post in posts %}
-        <div class="post">
-            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200|emoji_replace }}</p>
-        </div>
+      <div class="post">
+          <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <p>{{ post.text|truncatechars:200|emoji_replace }}</p>
+      </div>
     {% endfor %}
 {% endblock %}
