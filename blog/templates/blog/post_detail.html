@@ -18,6 +18,9 @@
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
+        {% if post.image and post.image != 'False' %}
+           <img class='detail-image' src="{{ post.image.url }}"/>
+        {% endif %}
         <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
     </div>
 

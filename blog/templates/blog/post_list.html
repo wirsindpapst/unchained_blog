@@ -8,6 +8,11 @@
                 <p>{{ post.author.username }} posted on {{ post.published_date }}</p>
             </div>
             <h1><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h1>
+              {% if post.image and post.image != 'False' %}
+
+                 <img class='list-image' src="{{ post.image.url }}"/>
+
+              {% endif %}
             <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
         </div>
     {% endfor %}

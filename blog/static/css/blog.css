@@ -57,3 +57,13 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
+
+.list-image {
+  width:150px;
+  height:auto;
+}
+
+.detail-image {
+  width:250px;
+  height:auto;
+}

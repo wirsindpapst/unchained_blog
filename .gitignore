@@ -8,3 +8,6 @@ myvenv/
 
 # ignore geckodriver.log
 geckodriver.log
+
+# ignore image folder
+images/
