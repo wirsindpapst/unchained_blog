@@ -6,7 +6,7 @@
         {% if post.published_date %}
             <div class="date">
                 <p> {{ post.published_date }} </p>
-                <p>{{ user.username }} </p>
+                <p>{{ post.author.username }} </p>
             </div>
         {% else %}
             <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
@@ -21,7 +21,7 @@
     {% for comment in comments %}
         <div class="comments">
             <div class="comment-details" style="padding-top:15">
-                <h6>{{ user.username }} commented</h6>
+                <h6>{{ comment.author.username }} commented</h6>
                 <h6>on {{ comment.created_date }}</h6>
             </div>
             <div id="comment-body">
