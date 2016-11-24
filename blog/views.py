@@ -24,8 +24,15 @@ def post_draft_list(request):
 
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.publish()
+    if request.user.id == post.author_id:
+        post.publish()
     return redirect('post_detail', pk=pk)
+
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.user.id == post.author_id:
+        post.delete()
+    return redirect('post_list')
 
 def post_detail(request, pk):
     if request.method == "POST":
