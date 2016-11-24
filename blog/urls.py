@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^accounts/register/$',views.register, name='register'),
     url(r'^emoji/', include('emoji.urls')),
     url(r'^delete/post/(?P<post_id>\d+)/comment/(?P<comment_id>\d+)/$', views.comment_delete, name='comment_delete'),
+    url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
+    url(r'^post/(?P<pk>\d+)/publish/$', views.post_publish, name='post_publish'),
 ]
