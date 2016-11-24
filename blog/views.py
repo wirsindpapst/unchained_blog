@@ -14,6 +14,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 
+# Image uploading nd resizing
+from PIL import Image
+
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     return render(request, 'blog/post_list.html', {'posts': posts})
@@ -40,11 +44,12 @@ def post_detail(request, pk):
 def post_new(request):
     if request.user.id:
         if request.method == "POST":
-            form = PostForm(request.POST)
+            form = PostForm(request.POST, request.FILES)
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
                 post.published_date = timezone.now()
+                post.image = form.cleaned_data['image']
                 post.save()
                 return redirect('post_detail', pk=post.pk)
         else:
@@ -57,11 +62,12 @@ def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.user.id == post.author_id:
         if request.method == "POST":
-            form = PostForm(request.POST, instance=post)
+            form = PostForm(request.POST, request.FILES, instance=post)
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
                 post.published_date = timezone.now()
+                post.image = form.cleaned_data['image']
                 post.save()
                 return redirect('post_detail', pk=post.pk)
         else:

@@ -9,7 +9,8 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text',)
+        image = forms.ImageField()
+        fields = ('title', 'text', 'image')
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)

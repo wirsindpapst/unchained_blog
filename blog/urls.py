@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Additional imports for users:
 from django.conf.urls import include
@@ -14,4 +16,4 @@ urlpatterns = [
     url(r'^accounts/register/$',views.register, name='register'),
     url(r'^emoji/', include('emoji.urls')),
     url(r'^delete/post/(?P<post_id>\d+)/comment/(?P<comment_id>\d+)/$', views.comment_delete, name='comment_delete'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
