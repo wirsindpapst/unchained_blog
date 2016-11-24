@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^accounts/register/$',views.register, name='register'),
     url(r'^emoji/', include('emoji.urls')),
     url(r'^delete/post/(?P<post_id>\d+)/comment/(?P<comment_id>\d+)/$', views.comment_delete, name='comment_delete'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+   url('', include('django.contrib.auth.urls', namespace='auth')),
 ]
