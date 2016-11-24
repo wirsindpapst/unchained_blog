@@ -12,6 +12,8 @@ from django.shortcuts import render_to_response
 from .forms import RegistrationForm, CommentForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.template.context import RequestContext
+
 
 
 def post_list(request):
@@ -125,3 +127,13 @@ def comment_delete(request, comment_id, post_id):
     else:
         messages.info(request, "You cannot delete this comment.")
         return redirect('/post/'+post_id)
+
+def home(request):
+    context = RequestContext(request,
+                       {'request': request,
+                        'user': request.user})
+    return render_to_response('blog/home.html',
+                         context_instance=context)
+
+def logged_out(request):
+    return render(request, 'blog/logged_out.html')

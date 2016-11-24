@@ -12,12 +12,14 @@
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
-                <a href='/logout' class='user-links'>Log out</a>
+                <a href='/logout?next=/logged_out' class='user-links'>Log out</a>
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
             {% else %}
                 <a href='/login' class='user-links'>Log in</a><span class='user-links'> |</span>
-                <a href='/accounts/register' class='user-links'>Sign up</a>
+                <a href='/accounts/register' class='user-links'>Sign up</a><span class='user-links'> |</span>
+                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a><span class='user-links'> |</span>
+                <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
             {% endif %}
             {% if messages %}
                <ul id='message' class="messages">
