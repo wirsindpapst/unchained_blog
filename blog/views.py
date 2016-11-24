@@ -114,3 +114,6 @@ def home(request):
                         'user': request.user})
     return render_to_response('blog/home.html',
                          context_instance=context)
+
+def logged_out(request):
+    return render(request, 'blog/logged_out.html')
