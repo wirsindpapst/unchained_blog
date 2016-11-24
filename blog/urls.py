@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
     url(r'^post/(?P<pk>\d+)/publish/$', views.post_publish, name='post_publish'),
     url(r'^post/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
+    url(r'^profile/edit/$', views.update_profile, name='update_profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

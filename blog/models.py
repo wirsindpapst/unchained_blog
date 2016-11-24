@@ -1,9 +1,37 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class User(models.Model):
     User._meta.get_field('email')._unique = True
+
+    # def create_profile(sender, **kwargs):
+    #     user = kwargs["instance"]
+    #     if kwargs["created"]:
+    #         user_profile = Blogger(user=user)
+    #         user_profile.save()
+    # post_save.connect(create_profile, sender=User)
+
+class Blogger(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.FileField(verbose_name=("Profile Picture"),
+                      upload_to="images/", null=True, blank=True)
+    bio = models.TextField(default='', blank=True)
+    city = models.CharField(max_length=100, default='', blank=True)
+    country = models.CharField(max_length=100, default='', blank=True)
+    birthdate = models.DateField(default='', null=True, blank=True)
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
