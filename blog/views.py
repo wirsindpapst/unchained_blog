@@ -21,7 +21,7 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_draft_list(request):
-    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date').reverse()
+    posts = Post.objects.filter( author__in=[request.user.id], published_date__isnull=True).order_by('created_date').reverse()
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
 def post_publish(request, pk):
