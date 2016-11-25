@@ -111,7 +111,6 @@ def register(request):
             login(request, new_user)
             profile = Blogger()
             profile.user = new_user
-            print(profile)
             profile.save()
             return HttpResponseRedirect('/')
 
@@ -161,7 +160,7 @@ def update_profile(request):
             profile.user_id = request.user.id
             print(profile.user_id)
             profile.save()
-            return redirect('post_list')
+            return redirect('show_profile')
         else:
             messages.error(request, _('Please correct the error below.'))
     else:
@@ -173,11 +172,13 @@ def update_profile(request):
 def show_profile(request):
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
-    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts})
+    user = get_object_or_404(User, id=request.user.id)
+    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts, 'user': user})
 
 
 
 def user_profile(request, pk):
     profile = get_object_or_404(Blogger, user_id=pk)
     posts = Post.objects.filter(author_id=pk).order_by('published_date').reverse()
-    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts})
+    user = get_object_or_404(User, id=pk)
+    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts, 'user': user})
