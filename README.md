@@ -38,7 +38,7 @@ You'll be taken away to a wonderful page where you can write down all your thoug
 and concerns about this awful world we live in. You can even add an Image.
 And did I mention Emojis? Oh yes. Emojis as well.
 Go wild, let out all you angst then when you are ready hit the publish post button and It will be saved and posted on the site.
-If you aren't ready, well don't worry! Save it as a draft and come back later. Nobody will be able to see your half-written posts but you. If you decide later on that your post was in fact too ridiculous, even for the internet, you can delete it, no sweat. 
+If you aren't ready, well don't worry! Save it as a draft and come back later. Nobody will be able to see your half-written posts but you. If you decide later on that your post was in fact too ridiculous, even for the internet, you can delete it or edit it, no sweat. 
 
 ![alt tag](http://i67.tinypic.com/2jalv60.png)
 
