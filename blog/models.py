@@ -24,14 +24,6 @@ class Blogger(models.Model):
     country = models.CharField(max_length=100, default='', blank=True)
 
 
-def create_profile(sender, **kwargs):
-    user = kwargs["instance"]
-    if kwargs["created"]:
-        user_profile = UserProfile(user=user)
-        user_profile.save()
-post_save.connect(create_profile, sender=User)
-
-
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)

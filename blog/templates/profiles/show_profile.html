@@ -1,8 +1,11 @@
 {% extends 'blog/base.html' %}
 {% load emoji_tags %}
 {% block content %}
-<div class='profile'>
+{% load social_share %}
 
+
+<div class='profile'>
+   <h1>{{ user.username }}</h1>
    {% if profile.profile_pic and profile.profile_pic != 'False' %}
     <img class='thumb-nail' src="{{ profile.profile_pic.url }}"/>
    {% endif %}
@@ -10,8 +13,10 @@
    <p>{{ profile.bio|linebreaksbr|emoji_replace }}</p>
    <p>{{ profile.city}}</p>
    <p>{{ profile.country }}</p>
+   <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
+   <p>{% post_to_twitter object_or_url "" %}</p>
+   <p>{% send_email 'Look at this amazing blogger' "Check out this profile! {{user.username}}. It's amazing!" object_or_url "Share via email" %}</p>
 </div>
-<br>
 <br>
 
  {% for post in posts %}
