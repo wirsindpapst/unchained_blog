@@ -54,7 +54,7 @@ If you visit your profile page (The same drop down menu as before) you'll be abl
  * Irene Oppo
 ```
 ####Notes on the build
-Django/Python backend, HTML, CSS Javascript and some JQuery.
+Django/Python backend, postgreSQL, HTML, CSS Javascript and some JQuery.
 
 
 #### User Stories
