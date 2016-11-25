@@ -32,18 +32,15 @@ Once your logged in hover back over that same menu button and hit the new post l
 You'll be taken away to a wonderful page where you can write down all your thoughts
 and concerns about this awful world we live in. You can even add an Image.
 And did I mention Emojis? Oh yes. Emojis as well.
-Go wild, let out all you angst then when you are ready hit the publish post button and It will be
-saved and posted on the site.
-If you aren't ready, well don't worry! Save it as a draft and come back later. Nobody will be
-able to see your half-written posts but you.  
+Go wild, let out all you angst then when you are ready hit the publish post button and It will be saved and posted on the site.
+If you aren't ready, well don't worry! Save it as a draft and come back later. Nobody will be able to see your half-written posts but you.  
 
 ![alt tag](http://i67.tinypic.com/2jalv60.png)
+
 Once uploaded you can share your posts and even your profile on social media using the links.
-If you see a post you like you can leave comments, and don't worry, if you make a post that has
-unpleasant comments you can remove them yourself.
-If you visit your profile page (The same drop down menu as before) you'll be able to view all your own
-posts. Want to add a profile pic. No problem, go to the edit profile link in the same drop down menu you
-can add a profile pic, a short bio and where you currently live.
+If you see a post you like you can leave comments, and don't worry, if you make a post that has unpleasant comments you can remove them yourself.
+If you visit your profile page (The same drop down menu as before) you'll be able to view all your own posts. Want to add a profile pic. No problem, go to the edit profile link in the same drop down menu you can add a profile pic, a short bio and where you currently live.
+
 ![alt tag](http://i64.tinypic.com/1op3bo.png)
 
 #### Tech Stuff
@@ -56,6 +53,7 @@ Built with love by:
  * Stevie Winston-Gore
  * Irene Oppo
 ```
+
 
 
 #### User Stories
