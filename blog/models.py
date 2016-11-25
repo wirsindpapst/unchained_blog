@@ -19,7 +19,7 @@ class Blogger(models.Model):
 
     profile_pic = models.FileField(verbose_name=("Profile Picture"),
                       upload_to="images/", null=True, blank=True)
-    bio = models.TextField(default='', blank=True)
+    bio = models.TextField(max_length=500, default='', blank=True)
     city = models.CharField(max_length=100, default='', blank=True)
     country = models.CharField(max_length=100, default='', blank=True)
 
