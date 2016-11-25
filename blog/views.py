@@ -153,6 +153,12 @@ def logged_out(request):
 @login_required
 @transaction.atomic
 def update_profile(request):
+    check = Blogger.objects.filter(user_id=request.user.id).exists()
+    if request.user.id and check == False:
+        profile = Blogger()
+        profile.user = request.user
+        profile.save()
+
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     if request.method == 'POST':
         user_form = ProfileForm(request.POST, request.FILES, instance=profile)
@@ -170,6 +176,12 @@ def update_profile(request):
     })
 
 def show_profile(request):
+    check = Blogger.objects.filter(user_id=request.user.id).exists()
+    if request.user.id and check == False:
+        profile = Blogger()
+        profile.user = request.user
+        profile.save()
+
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
     user = get_object_or_404(User, id=request.user.id)
