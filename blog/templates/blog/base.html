@@ -13,22 +13,29 @@
     </head>
     <body>
         <div class="page-header">
-            {% if user.is_authenticated %}
-                <a href='/logout?next=/logged_out' class='user-links'>Log out</a>
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-            {% else %}
-                <a href='/login' class='user-links'>Log in</a><span class='user-links'> |</span>
-                <a href='/accounts/register' class='user-links'>Sign up</a><span class='user-links'> |</span>
-                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a><span class='user-links'> |</span>
-                <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
-            {% endif %}
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    {% if user.is_authenticated %}
+                        <a href='/logout?next=/logged_out'>Log out</a>
+                        <a href='/profile' class='user-links'>Profile</a>
+                        <a href='/profile/edit' class='user-links'>Edit Profile</a>
+                        <a href="{% url 'post_new' %}" > New Post</a>
+                        <a href="{% url 'post_draft_list' %}"> View Drafts</a>
+                    {% else %}
+                        <a href='/accounts/register' class='user-links'>Sign up</a><span class='user-links'> |</span>
+                        <a href='/login' class='user-links'>Log in</a><span class='user-links'> |</span>
+                        <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a><span class='user-links'> |</span>
+                        <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+                    {% endif %}
+                </div>
+            </div>
             {% if messages %}
-               <ul id='message' class="messages">
+                <ul id='message' class="messages">
             {% for message in messages %}
-               <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
-            </ul>
+                </ul>
             {% endif %}
             <h1 id='blog-title'><a href="/">Unchained</a></h1>
         </div>
