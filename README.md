@@ -43,8 +43,8 @@ Once uploaded you can share your posts and even your profile on social media usi
 If you see a post you like you can leave comments, and don't worry, if you make a post that has
 unpleasant comments you can remove them yourself.
 If you visit your profile page (The same drop down menu as before) you'll be able to view all your own
-posts. Want to add a profile pic. No problem, go to the edit profile link in the same drop down menu you can add a profile pic, a short bio and
-where you currently live.
+posts. Want to add a profile pic. No problem, go to the edit profile link in the same drop down menu you
+can add a profile pic, a short bio and where you currently live.
 ```
 ![alt tag](http://i64.tinypic.com/1op3bo.png)
 
