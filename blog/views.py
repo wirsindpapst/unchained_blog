@@ -58,12 +58,13 @@ def post_detail(request, pk):
     else:
         post = get_object_or_404(Post, pk=pk)
         comments = Comment.objects.filter(post_id=pk)
+        categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
         category_form = CategoryForm()
         if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form, 'category_form': category_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form})
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form})
 
 def post_new(request):
     if request.user.id:
