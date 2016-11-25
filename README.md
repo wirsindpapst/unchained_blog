@@ -13,6 +13,8 @@ export SOCIAL_AUTH_FACEBOOK_SECRET=""
 export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=""
 export SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=""
 
+$ git clone https://github.com/Swinston88/unchained_blog.git
+
 Activate your python environment then CD into the blog directory:
 (your_environment)$ pip install -r requirements.txt
 (your_environment)$ python manage.py migrate
