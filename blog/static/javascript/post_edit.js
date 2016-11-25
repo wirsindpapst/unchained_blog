@@ -8,4 +8,8 @@ $(document).ready(function(){
     left = 1000 - $(this).val().length;
     $('#counter').text(' Characters left: ' + left);
   }));
+  $('.like-btn').click(function(event){
+    console.log("working!");
+    event.preventDefault();
+  });
 });

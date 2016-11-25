@@ -7,13 +7,6 @@ from django.dispatch import receiver
 class User(models.Model):
     User._meta.get_field('email')._unique = True
 
-    # def create_profile(sender, **kwargs):
-    #     user = kwargs["instance"]
-    #     if kwargs["created"]:
-    #         user_profile = Blogger(user=user)
-    #         user_profile.save()
-    # post_save.connect(create_profile, sender=User)
-
 class Blogger(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
@@ -54,3 +47,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.body
+
+class Like(models.Model):
+    user = models.ForeignKey('auth.User')
+    post = models.ForeignKey(Post)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def counter(self, post_id):
+        likes = Like.object.filter(post_id = post_id).count()
+        return likes

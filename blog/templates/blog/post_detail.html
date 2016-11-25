@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load social_share %}
+{% load static %}
 
 {% block content %}
 {% load emoji_tags %}
@@ -23,6 +24,8 @@
            <img class='detail-image' src="{{ post.image.url }}"/>
         {% endif %}
         <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
+        <p>{{ likes }}</p>
+        <a class="like-btn" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
         <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
         <p>{% post_to_twitter object_or_url "" %}</p>
         <p>{% send_email 'Look at this amazing post' "Check out this post! {{post.title}}. It's amazing!" object_or_url "Share via email" %}</p>
@@ -53,4 +56,5 @@
             <button type="submit" class="save btn btn-default">Post comment</button>
         </form>
     {% endif %}
+    <!-- <script src="{% static "javascript/like.js" %}"></script> -->
 {% endblock %}
