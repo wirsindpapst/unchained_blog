@@ -11,6 +11,3 @@ class Migration(migrations.Migration):
         ('blog', '0006_user'),
         ('blog', '0005_auto_20161124_1138'),
     ]
-
-    operations = [
-    ]
