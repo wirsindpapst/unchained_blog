@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% load emoji_tags %}
+{% block content %}
+{% load social_share %}
+
+
+<div class='profile'>
+   <h1>{{ user.username }}</h1>
+   {% if profile.profile_pic and profile.profile_pic != 'False' %}
+    <img class='thumb-nail' src="{{ profile.profile_pic.url }}"/>
+   {% endif %}
+
+   <p>{{ profile.bio|linebreaksbr|emoji_replace }}</p>
+   <p>{{ profile.city}}</p>
+   <p>{{ profile.country }}</p>
+   <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
+   <p>{% post_to_twitter object_or_url "" %}</p>
+   <p>{% send_email 'Look at this amazing blogger' "Check out this profile! {{user.username}}. It's amazing!" object_or_url "Share via email" %}</p>
+</div>
+<br>
+
+ {% for post in posts %}
+     <div class="post">
+         <div class="date">
+             <p>posted on {{ post.published_date }}</p>
+         </div>
+         <h1><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h1>
+           {% if post.image and post.image != 'False' %}
+
+              <img class='list-image' src="{{ post.image.url }}"/>
+
+           {% endif %}
+         <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
+     </div>
+ {% endfor %}
+
+{% endblock %}
