@@ -6,16 +6,19 @@ Pre-installation you will need to set up Social Media Keys as follows:
 
 - set up an app on developers.facebook. Get your app & secret key. Set redirect url to http://localhost:8000
 - set up an app with Google API. Get your app & secret key. Set your redirect url to: http://localhost:8000/complete/google-oauth2/  
-        -- Ensure you ENABLE both the api for Gmail API and Google+ API from their list of all APIs.
+- Ensure you ENABLE both the api for Gmail API and Google+ API from their list of all APIs.
 - Save your Facebook & Google keys as environment variables in your bash profile:
 export SOCIAL_AUTH_FACEBOOK_KEY=""
 export SOCIAL_AUTH_FACEBOOK_SECRET=""
 export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=""
 export SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=""
 
+First clone the repo:
+
 $ git clone https://github.com/Swinston88/unchained_blog.git
 
-Activate your python environment then CD into the blog directory:
+Then activate your python environment and CD into the blog directory:
+
 (your_environment)$ pip install -r requirements.txt
 (your_environment)$ python manage.py migrate
 (your_environment)$ python manage.py runserver
