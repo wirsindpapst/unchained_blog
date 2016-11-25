@@ -6,7 +6,7 @@
         {% if post.published_date %}
             <div class="date">
                 <p> {{ post.published_date }} </p>
-                <p>{{ post.author.username }} </p>
+                <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a></p>
             </div>
         {% else %}
             {% if user.is_authenticated and post.author_id == user.id %}
