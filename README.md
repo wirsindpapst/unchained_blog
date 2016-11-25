@@ -22,8 +22,8 @@ visit http://localhost:8000 in your preferred browser (unless thats IE then do y
 #### Using the Site
 ```
 On visiting the web page you'll be greeted by a big green banner with a menu button on the right side. Hover over it and choose your preferred log in, Facebook, Google+ or good old fashioned email sign up.
-![alt tag](http://i67.tinypic.com/aeusfd.png)
 ```
+![alt tag](http://i67.tinypic.com/aeusfd.png)
 
 #### User Stories
 ```
