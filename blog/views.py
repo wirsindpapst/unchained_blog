@@ -124,7 +124,7 @@ def register(request):
 
 def registration_complete(request):
     return render_to_response('registration/registration_complete.html')
-    
+
 
 
 def comment_delete(request, comment_id, post_id):
@@ -170,4 +170,11 @@ def update_profile(request):
 def show_profile(request):
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
+    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts})
+
+
+
+def user_profile(request, pk):
+    profile = get_object_or_404(Blogger, user_id=pk)
+    posts = Post.objects.filter(author_id=pk).order_by('published_date').reverse()
     return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts})
