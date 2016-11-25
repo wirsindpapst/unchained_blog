@@ -146,5 +146,11 @@ def home(request):
     return render_to_response('blog/home.html',
                          context_instance=context)
 
+def get_category(request, category_text):
+    categories = Category.objects.filter(text=category_text)
+    post_ids = list(category.post_id for category in categories)
+    posts = Post.objects.filter( id__in=post_ids).order_by('created_date').reverse()
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
 def logged_out(request):
     return render(request, 'blog/logged_out.html')

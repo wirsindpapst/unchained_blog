@@ -5,11 +5,11 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                <p> {{ post.published_date }} </p>
+                <p>{{ post.published_date }} </p>
                 <p>{{ post.author.username }} </p>
-                <p>Tags:
+                <p>Categories:
                   {% for category in categories %}
-                    <a href="/">{{ category.text }}</a>
+                    <a href="{% url 'get_category' category_text=category.text %}">{{ category.text }}</a>
                   {% endfor %}
                 </p>
             </div>
