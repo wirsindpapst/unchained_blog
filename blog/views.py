@@ -166,17 +166,15 @@ def update_profile(request):
         profile = Blogger()
         profile.user = request.user
         profile.save()
-
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     if request.method == 'POST':
         user_form = ProfileForm(request.POST, request.FILES, instance=profile)
         if user_form.is_valid():
             profile.user_id = request.user.id
-            print(profile.user_id)
             profile.save()
             return redirect('show_profile')
         else:
-            messages.error(request, _('Please correct the error below.'))
+            messages.error(request, ('Please correct the error below.'))
     else:
         user_form = ProfileForm(instance=profile)
     return render(request, 'profiles/profile.html', {
@@ -189,7 +187,6 @@ def show_profile(request):
         profile = Blogger()
         profile.user = request.user
         profile.save()
-
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
     user = get_object_or_404(User, id=request.user.id)
