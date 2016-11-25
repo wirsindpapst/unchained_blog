@@ -36,7 +36,8 @@ class ProfileForm(forms.ModelForm):
         fields = ('profile_pic', 'bio', 'city', 'country',)
 
 class CommentForm(forms.ModelForm):
-
+    body = forms.CharField(required=True)
+    
     class Meta:
         model = Comment
         fields = ('body',)

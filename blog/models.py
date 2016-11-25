@@ -3,16 +3,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 
 class User(models.Model):
     User._meta.get_field('email')._unique = True
-
-    # def create_profile(sender, **kwargs):
-    #     user = kwargs["instance"]
-    #     if kwargs["created"]:
-    #         user_profile = Blogger(user=user)
-    #         user_profile.save()
-    # post_save.connect(create_profile, sender=User)
 
 class Blogger(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -44,7 +39,7 @@ class Post(models.Model):
 class Comment(models.Model):
     author = models.ForeignKey('auth.User')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    body = models.CharField(max_length=300)
+    body = models.CharField(null=False, blank=False, max_length=300)
     created_date = models.DateTimeField(
             default=timezone.now)
 
@@ -54,3 +49,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.body
+
+class Like(models.Model):
+    user = models.ForeignKey('auth.User')
+    post = models.ForeignKey(Post)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def counter(self, post_id):
+        likes = Like.object.filter(post_id = post_id).count()
+        return likes

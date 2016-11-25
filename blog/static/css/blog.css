@@ -37,6 +37,7 @@ h1, h2, h3, h4 {
 
 .save {
     float: right;
+    margin-bottom: 70px;
 }
 
 .post-form textarea, .post-form input {

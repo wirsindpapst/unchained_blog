@@ -24,7 +24,10 @@
            <img class='detail-image' src="{{ post.image.url }}"/>
         {% endif %}
         <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
-
+        <p>Likes: {{ likes }}</p>
+        {% if user.is_authenticated %}
+        <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
+        {% endif %}
         {% if post.published_date %}
             <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
             <p>{% post_to_twitter object_or_url "" %}</p>
@@ -53,7 +56,7 @@
     {% if user.is_authenticated %}
         <div>
             {% if post.published_date %}
-                <button id='add-comment' class="save btn btn-default">Comment</button>
+                <button id='add-comment' class="save btn btn-default add-comment">Comment</button>
             {% endif %}
             <form method="POST" class="comment-form">{% csrf_token %}
                 {{ comment_form.as_p }}
@@ -61,5 +64,8 @@
             </form>
         </div>
     {% endif %}
+    <!-- <script src="{% static "javascript/like.js" %}"></script> -->
+
     <script src="{% static "javascript/post_detail.js" %}"></script>
+
 {% endblock %}

@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Like
 from .forms import PostForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 # Additional imports for users:
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
@@ -18,6 +18,11 @@ from django.template.context import RequestContext
 #profile
 from .models import Blogger
 from .forms import UserForm, ProfileForm
+
+try:
+    from django.utils import simplejson as json
+except ImportError:
+    import json
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
@@ -52,14 +57,17 @@ def post_detail(request, pk):
             new_comment.created_date = timezone.now()
             new_comment.save()
             return redirect('post_detail', pk= new_comment.post.id)
+        else:
+            return redirect('post_detail', pk=pk)
     else:
         post = get_object_or_404(Post, pk=pk)
+        likes = Like.objects.filter(post_id=pk).count()
         comments = Comment.objects.filter(post_id=pk)
         comment_form = CommentForm()
         if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form, 'likes': likes})
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'likes': likes})
 
 def post_new(request):
     if request.user.id:
@@ -158,17 +166,15 @@ def update_profile(request):
         profile = Blogger()
         profile.user = request.user
         profile.save()
-
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     if request.method == 'POST':
         user_form = ProfileForm(request.POST, request.FILES, instance=profile)
         if user_form.is_valid():
             profile.user_id = request.user.id
-            print(profile.user_id)
             profile.save()
             return redirect('show_profile')
         else:
-            messages.error(request, _('Please correct the error below.'))
+            messages.error(request, ('Please correct the error below.'))
     else:
         user_form = ProfileForm(instance=profile)
     return render(request, 'profiles/profile.html', {
@@ -181,7 +187,6 @@ def show_profile(request):
         profile = Blogger()
         profile.user = request.user
         profile.save()
-
     profile = get_object_or_404(Blogger, user_id=request.user.id)
     posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
     user = get_object_or_404(User, id=request.user.id)
@@ -194,3 +199,14 @@ def user_profile(request, pk):
     posts = Post.objects.filter(author_id=pk).order_by('published_date').reverse()
     user = get_object_or_404(User, id=pk)
     return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts, 'user': user})
+
+
+def like(request, pk):
+# if request.method == 'POST':
+#     new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
+#     likes = Like.objects.filter(post_id=pk).count()
+#     ctx = {'likes': likes}
+#     return HttpResponse(json.dumps(ctx), content_type='application/json')
+
+    new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
+    return redirect('post_detail', pk=pk)
