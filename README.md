@@ -1,6 +1,6 @@
-### Unchained | a Blogging platform
+# Unchained | a Blogging platform
 
-#### Installation And Running Instructions
+## Installation And Running Instructions
 ```
 Pre-installation you will need to set up Social Media Keys as follows:
 
@@ -19,7 +19,7 @@ Activate your python environment then CD into the blog directory:
 (your_environment)$ python manage.py runserver
 visit http://localhost:8000 in your preferred browser (unless thats IE then do yourself a favour and download Chrome or Firefox)
  ```
-#### Using the Site
+## Using the Site
 
 On visiting the web page you'll be greeted by a big green banner with a menu button on the right side.
 Hover over it and choose your preferred log in, Facebook, Google+ or good old fashioned email sign up.
@@ -43,8 +43,8 @@ If you visit your profile page (The same drop down menu as before) you'll be abl
 
 ![alt tag](http://i64.tinypic.com/1op3bo.png)
 
-#### Tech Stuff
-Built with love by:
+## Tech
+####Built with love by:
 ```
  * Glenn Bemont
  * James Steel
@@ -53,7 +53,8 @@ Built with love by:
  * Stevie Winston-Gore
  * Irene Oppo
 ```
-
+####Notes on the build
+Django/Python backend, HTML, CSS Javascript and some JQuery.
 
 
 #### User Stories
