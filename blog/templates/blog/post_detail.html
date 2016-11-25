@@ -28,11 +28,12 @@
         {% if user.is_authenticated %}
         <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
         {% endif %}
-        <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
-        <p>{% post_to_twitter object_or_url "" %}</p>
-        <p>{% send_email 'Look at this amazing post' "Check out this post! {{post.title}}. It's amazing!" object_or_url "Share via email" %}</p>
-
+        {% if post.published_date %}
+            <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
+            <p>{% post_to_twitter object_or_url "" %}</p>
+            <p>{% send_email 'Look at this amazing post' "Check out this post! {{post.title}}. It's amazing!" object_or_url "Share via email" %}</p>
     </div>
+
 
     {% for comment in comments %}
         <div class="comments">
@@ -50,13 +51,21 @@
 
         </div>
     {% endfor %}
+    {% endif %}
 
     {% if user.is_authenticated %}
-        <h1>Add a comment</h1>
-        <form method="POST" class="comment-form">{% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit" class="save btn btn-default">Post comment</button>
-        </form>
+        <div>
+            {% if post.published_date %}
+                <button id='add-comment' class="save btn btn-default add-comment">Comment</button>
+            {% endif %}
+            <form method="POST" class="comment-form">{% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" class="save btn btn-default">Post comment</button>
+            </form>
+        </div>
     {% endif %}
     <!-- <script src="{% static "javascript/like.js" %}"></script> -->
+
+    <script src="{% static "javascript/post_detail.js" %}"></script>
+
 {% endblock %}

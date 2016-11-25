@@ -37,6 +37,7 @@ h1, h2, h3, h4 {
 
 .save {
     float: right;
+    margin-bottom: 70px;
 }
 
 .post-form textarea, .post-form input {
@@ -71,6 +72,10 @@ h1, h2, h3, h4 {
 .row .col-md-8 .profile .thumb-nail {
   width: 100px;
   height: auto;
+}
+
+.comment-form {
+  display: none;
 }
 
 /* Dropdown Button */

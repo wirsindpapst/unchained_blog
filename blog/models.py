@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _
 
 class User(models.Model):
     User._meta.get_field('email')._unique = True
@@ -12,7 +14,7 @@ class Blogger(models.Model):
 
     profile_pic = models.FileField(verbose_name=("Profile Picture"),
                       upload_to="images/", null=True, blank=True)
-    bio = models.TextField(default='', blank=True)
+    bio = models.TextField(max_length=500, default='', blank=True)
     city = models.CharField(max_length=100, default='', blank=True)
     country = models.CharField(max_length=100, default='', blank=True)
 
@@ -37,7 +39,7 @@ class Post(models.Model):
 class Comment(models.Model):
     author = models.ForeignKey('auth.User')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    body = models.CharField(max_length=300)
+    body = models.CharField(null=False, blank=False, max_length=300)
     created_date = models.DateTimeField(
             default=timezone.now)
 

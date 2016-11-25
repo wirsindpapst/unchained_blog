@@ -57,6 +57,8 @@ def post_detail(request, pk):
             new_comment.created_date = timezone.now()
             new_comment.save()
             return redirect('post_detail', pk= new_comment.post.id)
+        else:
+            return redirect('post_detail', pk=pk)
     else:
         post = get_object_or_404(Post, pk=pk)
         likes = Like.objects.filter(post_id=pk).count()
