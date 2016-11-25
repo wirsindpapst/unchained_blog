@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment
+from .models import Post, Comment, Category
 
 # Additional imports for users:
 from django.contrib.auth.models import User
@@ -32,4 +32,13 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
         labels = {
             'body': ('Your thoughts'),
+        }
+
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        fields = ('text',)
+        labels = {
+            'text': ('Add a category'),
         }

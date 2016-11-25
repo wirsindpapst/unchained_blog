@@ -40,6 +40,14 @@
 
         </div>
     {% endfor %}
+    
+    {% if user.is_authenticated %}
+        <h1>Add a category</h1>
+        <form method="POST" class="category-form">{% csrf_token %}
+            {{ category_form.as_p }}
+            <button type="submit" class="save btn btn-default">Post category</button>
+        </form>
+    {% endif %}
 
     {% if user.is_authenticated %}
         <h1>Add a comment</h1>

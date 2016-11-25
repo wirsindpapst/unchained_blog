@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from .forms import PostForm
 from django.contrib.auth.models import User
 
@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
-from .forms import RegistrationForm, CommentForm
+from .forms import RegistrationForm, CommentForm, CategoryForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.template.context import RequestContext
@@ -41,6 +41,7 @@ def post_remove(request, pk):
 
 def post_detail(request, pk):
     if request.method == "POST":
+        category_form = CategoryForm(request.POST)
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
@@ -49,14 +50,21 @@ def post_detail(request, pk):
             new_comment.created_date = timezone.now()
             new_comment.save()
             return redirect('post_detail', pk= new_comment.post.id)
+        if category_form.is_valid():
+            new_category = category_form.save(commit=False)
+            new_category.created_date = timezone.now()
+            new_category.save()
+            return redirect('post-detail', pk= new_category.post.id)
     else:
         post = get_object_or_404(Post, pk=pk)
         comments = Comment.objects.filter(post_id=pk)
+        # categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
+        category_form = CategoryForm()
         if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form, 'category_form': category_form})
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
+            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form})
 
 def post_new(request):
     if request.user.id:
