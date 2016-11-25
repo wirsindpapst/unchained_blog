@@ -17,16 +17,16 @@
                 <button class="dropbtn">Menu</button>
                 <div class="dropdown-content">
                     {% if user.is_authenticated %}
-                        <a href='/logout?next=/logged_out'>Log Out</a>
                         <a href='/profile' class='user-links'>Profile</a>
                         <a href='/profile/edit' class='user-links'>Edit Profile</a>
                         <a href="{% url 'post_new' %}" > New Post</a>
                         <a href="{% url 'post_draft_list' %}"> View Drafts</a>
+                        <a href='/logout?next=/logged_out'>Log Out</a>
                     {% else %}
                         <a href='/accounts/register' class='user-links'>Sign up</a><span class='user-links'> |</span>
                         <a href='/login' class='user-links'>Log in</a><span class='user-links'> |</span>
-                        <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a><span class='user-links'> |</span>
-                        <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+                        <a href="{% url 'social:begin' 'facebook' %}">Log in with Facebook</a><span class='user-links'> |</span>
+                        <a href="{% url 'social:begin' 'google-oauth2' %}">Log in with Google</a>
                     {% endif %}
                 </div>
             </div>
