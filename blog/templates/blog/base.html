@@ -20,8 +20,8 @@
                         <a href='/logout?next=/logged_out'>Log out</a>
                         <a href='/profile' class='user-links'>Profile</a>
                         <a href='/profile/edit' class='user-links'>Edit Profile</a>
-                        <a href="{% url 'post_new' %}" > New post</a>
-                        <a href="{% url 'post_draft_list' %}"> View drafts</a>
+                        <a href="{% url 'post_new' %}" > New Post</a>
+                        <a href="{% url 'post_draft_list' %}"> View Drafts</a>
                     {% else %}
                         <a href='/accounts/register' class='user-links'>Sign up</a><span class='user-links'> |</span>
                         <a href='/login' class='user-links'>Log in</a><span class='user-links'> |</span>
