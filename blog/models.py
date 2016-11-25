@@ -39,12 +39,6 @@ class Comment(models.Model):
 class Category(models.Model):
     text = models.CharField(max_length=15)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(
-            default=timezone.now)
 
     def __str__(self):
         return self.body
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()

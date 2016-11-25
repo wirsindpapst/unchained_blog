@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^emoji/', include('emoji.urls')),
     url(r'^logged_out$', views.logged_out, name='logged_out'),
     url(r'^delete/post/(?P<post_id>\d+)/comment/(?P<comment_id>\d+)/$', views.comment_delete, name='comment_delete'),
+    # url(r'^delete/post/(?P<post_id>\d+)/comment/(?P<comment_id>\d+)/$', views.comment_delete, name='comment_delete'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),

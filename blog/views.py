@@ -52,13 +52,12 @@ def post_detail(request, pk):
             return redirect('post_detail', pk= new_comment.post.id)
         if category_form.is_valid():
             new_category = category_form.save(commit=False)
-            new_category.created_date = timezone.now()
+            new_category.post = get_object_or_404(Post, pk=pk)
             new_category.save()
-            return redirect('post-detail', pk= new_category.post.id)
+            return redirect('post_detail', pk=new_category.post.id)
     else:
         post = get_object_or_404(Post, pk=pk)
         comments = Comment.objects.filter(post_id=pk)
-        # categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
         category_form = CategoryForm()
         if not comments:
