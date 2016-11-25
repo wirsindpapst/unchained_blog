@@ -29,12 +29,11 @@ You'll probably want to make a blog post, right?
 Easy.
 Once your logged in hover back over that same menu button and hit the new post link.
 You'll be taken away to a wonderful page where you can write down all your thoughts
-and concerns about this awful world we live in. You can even add an
-
-Image. and did I mention Emojis? Oh yes. Emojis as well. Go wild, let out all you
-  angst then when you are ready hit the publish post button and It will be saved and   posted on the site. If you aren't ready, well don't worry! Save it as a
-   draft and   come back later. nobody will be able to see your half-written posts
-    but you.  
+and concerns about this awful world we live in. You can even add an Image. and
+did I mention Emojis? Oh yes. Emojis as well. Go wild, let out all you angst
+then when you are ready hit the publish post button and It will be saved and   posted on the site. If you aren't ready, well don't worry! Save it as a
+draft and   come back later. nobody will be able to see your half-written posts
+but you.  
 ```
 ![alt tag](http://i67.tinypic.com/2jalv60.png)
 
