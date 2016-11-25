@@ -106,6 +106,10 @@ def register(request):
                                     password=form.cleaned_data['password1'],
                                     )
             login(request, new_user)
+            profile = Blogger()
+            profile.user = new_user
+            print(profile)
+            profile.save()
             return HttpResponseRedirect('/')
 
     else:
@@ -117,8 +121,10 @@ def register(request):
 
     return render_to_response('registration/registration_form.html', token)
 
+
 def registration_complete(request):
     return render_to_response('registration/registration_complete.html')
+    
 
 
 def comment_delete(request, comment_id, post_id):
@@ -141,23 +147,27 @@ def home(request):
 def logged_out(request):
     return render(request, 'blog/logged_out.html')
 
+
 @login_required
 @transaction.atomic
 def update_profile(request):
+    profile = get_object_or_404(Blogger, user_id=request.user.id)
     if request.method == 'POST':
-        user_form = UserForm(request.POST, instance=request.user)
-        profile_form = ProfileForm(request.POST, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('settings:profile')
+        user_form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if user_form.is_valid():
+            profile.user_id = request.user.id
+            print(profile.user_id)
+            profile.save()
+            return redirect('post_list')
         else:
             messages.error(request, _('Please correct the error below.'))
     else:
-        user_form = UserForm(instance=request.user)
-        profile_form = ProfileForm(instance=request.user.profile)
+        user_form = ProfileForm(instance=profile)
     return render(request, 'profiles/profile.html', {
         'user_form': user_form,
-        'profile_form': profile_form
     })
+
+def show_profile(request):
+    profile = get_object_or_404(Blogger, user_id=request.user.id)
+    posts = Post.objects.filter(author_id=request.user.id).order_by('published_date').reverse()
+    return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts})

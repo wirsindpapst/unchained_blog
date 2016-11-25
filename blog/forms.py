@@ -33,7 +33,7 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Blogger
-        fields = ('profile_pic', 'bio', 'city', 'country', 'birthdate')
+        fields = ('profile_pic', 'bio', 'city', 'country',)
 
 class CommentForm(forms.ModelForm):
 
