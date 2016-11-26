@@ -222,6 +222,10 @@ def like(request, pk):
 #     likes = Like.objects.filter(post_id=pk).count()
 #     ctx = {'likes': likes}
 #     return HttpResponse(json.dumps(ctx), content_type='application/json')
-
-    new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
+    liked = Like.objects.filter(user=request.user, post_id=pk)
+    if liked:
+        liked.delete()
+    else:
+        Like.objects.create(user=request.user, post_id=pk)
+    # new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
     return redirect('post_detail', pk=pk)
