@@ -13,7 +13,8 @@
                  <img class='list-image' src="{{ post.image.url }}"/>
 
               {% endif %}
-            <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
+
+            <p>{{ post.summary|linebreaksbr|emoji_replace }}</p>
         </div>
     {% endfor %}
 {% endblock %}
