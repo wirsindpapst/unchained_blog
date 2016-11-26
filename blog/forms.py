@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment, Blogger
+from .models import Post, Comment, Blogger, Category
 
 # Additional imports for users:
 from django.contrib.auth.models import User
@@ -37,10 +37,19 @@ class ProfileForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     body = forms.CharField(required=True)
-    
+
     class Meta:
         model = Comment
         fields = ('body',)
         labels = {
             'body': ('Your thoughts'),
+        }
+
+class CategoryForm(forms.ModelForm):
+
+    class Meta:
+        model = Category
+        fields = ('text',)
+        labels = {
+            'text': ('Add a category'),
         }

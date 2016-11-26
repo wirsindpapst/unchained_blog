@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment, Like
+from .models import Post, Comment, Like, Category
 from .forms import PostForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
-from .forms import RegistrationForm, CommentForm
+from .forms import RegistrationForm, CommentForm, CategoryForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.template.context import RequestContext
@@ -49,6 +49,7 @@ def post_remove(request, pk):
 
 def post_detail(request, pk):
     if request.method == "POST":
+        category_form = CategoryForm(request.POST)
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
@@ -57,17 +58,25 @@ def post_detail(request, pk):
             new_comment.created_date = timezone.now()
             new_comment.save()
             return redirect('post_detail', pk= new_comment.post.id)
+        if category_form.is_valid():
+            new_category = category_form.save(commit=False)
+            new_category.post = get_object_or_404(Post, pk=pk)
+            new_category.save()
+            return redirect('post_detail', pk=new_category.post.id)
         else:
             return redirect('post_detail', pk=pk)
     else:
         post = get_object_or_404(Post, pk=pk)
         likes = Like.objects.filter(post_id=pk).count()
         comments = Comment.objects.filter(post_id=pk)
+        categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
+        category_form = CategoryForm()
         if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comment_form': comment_form, 'likes': likes})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'likes': likes})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
+
 
 def post_new(request):
     if request.user.id:
@@ -153,6 +162,12 @@ def home(request):
                         'user': request.user})
     return render_to_response('blog/home.html',
                          context_instance=context)
+
+def get_category(request, category_text):
+    categories = Category.objects.filter(text=category_text)
+    post_ids = list(category.post_id for category in categories)
+    posts = Post.objects.filter( id__in=post_ids).order_by('created_date').reverse()
+    return render(request, 'blog/post_list.html', {'posts': posts})
 
 def logged_out(request):
     return render(request, 'blog/logged_out.html')

@@ -7,8 +7,12 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                <p> {{ post.published_date }} </p>
-                <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a></p>
+                <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a> posted on {{ post.published_date }}</p>
+                <p>Categories:
+                  {% for category in categories %}
+                    <a href="{% url 'get_category' category_text=category.text %}">{{ category.text }}</a>
+                  {% endfor %}
+                </p>
             </div>
         {% else %}
             {% if user.is_authenticated and post.author_id == user.id %}
@@ -18,6 +22,15 @@
         {% if user.is_authenticated and post.author_id == user.id %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+            <div>
+              {% if post.published_date %}
+                  <button id='add-category' class="save btn btn-default">Add category</button>
+              {% endif %}
+                <form method="POST" class="category-form">{% csrf_token %}
+                    {{ category_form.as_p }}
+                    <button type="submit" class="save btn btn-default">Post category</button>
+                </form>
+            </div>
         {% endif %}
         <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
         {% if post.image and post.image != 'False' %}
@@ -26,7 +39,7 @@
         <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
         <p>Likes: {{ likes }}</p>
         {% if user.is_authenticated %}
-        <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
+            <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
         {% endif %}
         {% if post.published_date %}
             <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
@@ -54,18 +67,18 @@
     {% endif %}
 
     {% if user.is_authenticated %}
-        <div>
-            {% if post.published_date %}
-                <button id='add-comment' class="save btn btn-default add-comment">Comment</button>
-            {% endif %}
-            <form method="POST" class="comment-form">{% csrf_token %}
-                {{ comment_form.as_p }}
-                <button type="submit" class="save btn btn-default">Post comment</button>
-            </form>
-        </div>
+      <div>
+          {% if post.published_date %}
+              <button id='add-comment' class="save btn btn-default">Comment</button>
+          {% endif %}
+          <form method="POST" class="comment-form">{% csrf_token %}
+              {{ comment_form.as_p }}
+              <button type="submit" class="save btn btn-default">Post comment</button>
+          </form>
+      </div>
+
     {% endif %}
     <!-- <script src="{% static "javascript/like.js" %}"></script> -->
-
     <script src="{% static "javascript/post_detail.js" %}"></script>
 
 {% endblock %}

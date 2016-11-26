@@ -50,6 +50,13 @@ class Comment(models.Model):
     def __str__(self):
         return self.body
 
+class Category(models.Model):
+    text = models.CharField(max_length=15)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.body
+
 class Like(models.Model):
     user = models.ForeignKey('auth.User')
     post = models.ForeignKey(Post)
