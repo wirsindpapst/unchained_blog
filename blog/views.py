@@ -14,6 +14,7 @@ from .forms import RegistrationForm, CommentForm, CategoryForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.template.context import RequestContext
+from django.db.models import Count
 
 #profile
 from .models import Blogger
@@ -236,3 +237,16 @@ def unlike(request, pk):
     if liked:
         liked.delete()
     return redirect('post_detail', pk=pk)
+
+def most_popular(request):
+    likes_dictionary = {}
+    posts = Post.objects.all()
+    ordered_by_likes = Post.objects.annotate(num_likes=Count('likes')).order_by('num_likes')
+    print(ordered_by_likes)
+    # for post in posts:
+    #     likes_count = Like.objects.filter(post_id = post.pk).count()
+    #     likes_dictionary[likes_count] = post
+    # sorted_keys = likes_dictionary.keys()
+    # sorted_keys = sorted_keys.sort()
+
+    return render(request, 'blog/most_popular.html', {'like_dictionary': likes_dictionary, 'sorted_keys': sorted_keys })
