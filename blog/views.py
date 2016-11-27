@@ -86,6 +86,11 @@ def post_new(request):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
+                post_summary_array = []
+                post_summary_array.append(post.text[:95])
+                post_summary_array.append("... ")
+                post_summary = " ".join(post_summary_array)
+                post.summary = post_summary
                 post.image = form.cleaned_data['image']
                 if 'draft' in request.POST:
                     post.save()
@@ -107,6 +112,11 @@ def post_edit(request, pk):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
+                post_summary_array = []
+                post_summary_array.append(post.text[:95])
+                post_summary_array.append("... ")
+                post_summary = " ".join(post_summary_array)
+                post.summary = post_summary
                 post.image = form.cleaned_data['image']
                 post.save()
                 return redirect('post_detail', pk=post.pk)
