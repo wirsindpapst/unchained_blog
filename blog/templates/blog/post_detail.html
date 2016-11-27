@@ -38,8 +38,10 @@
         {% endif %}
         <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
         <p>Likes: {{ likes }}</p>
-        {% if user.is_authenticated and post.author_id != user.id%}
+        {% if user.is_authenticated and post.author_id != user.id and not liked %}
             <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
+        {% elif user.is_authenticated and post.author_id != user.id and liked %}
+            <a class="like-btn btn btn-default" href="{% url 'unlike' pk=post.pk %}" name="{{ post.pk }}">Unlike</a>
         {% endif %}
         {% if post.published_date %}
             <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>

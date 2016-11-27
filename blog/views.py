@@ -68,14 +68,15 @@ def post_detail(request, pk):
     else:
         post = get_object_or_404(Post, pk=pk)
         likes = Like.objects.filter(post_id=pk).count()
+        liked = Like.objects.filter(user=request.user, post_id=pk)
         comments = Comment.objects.filter(post_id=pk)
         categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
         category_form = CategoryForm()
         if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes, 'liked': liked})
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes, 'liked': liked})
 
 
 def post_new(request):
@@ -228,4 +229,10 @@ def like(request, pk):
     else:
         Like.objects.create(user=request.user, post_id=pk)
     # new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
+    return redirect('post_detail', pk=pk)
+
+def unlike(request, pk):
+    liked = Like.objects.filter(user=request.user, post_id=pk)
+    if liked:
+        liked.delete()
     return redirect('post_detail', pk=pk)
