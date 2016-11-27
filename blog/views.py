@@ -86,12 +86,6 @@ def post_new(request):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
-                post_summary_array = []
-                post_summary_array.append(post.text[:95])
-                post_summary_array.append("... ")
-                post_summary = " ".join(post_summary_array)
-                print(post_summary)
-                post.summary = post_summary
                 post.image = form.cleaned_data['image']
                 if 'draft' in request.POST:
                     post.save()
