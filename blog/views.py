@@ -104,6 +104,7 @@ def post_new(request):
     else:
         return redirect('post_list')
 
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.user.id == post.author_id:
@@ -121,6 +122,7 @@ def post_edit(request, pk):
         return render(request, 'blog/post_edit.html', {'form': form})
     else:
         return redirect('post_detail', pk=post.pk)
+
 
 def register(request):
     if request.method == 'POST':
@@ -151,7 +153,6 @@ def registration_complete(request):
     return render_to_response('registration/registration_complete.html')
 
 
-
 def comment_delete(request, comment_id, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -162,6 +163,7 @@ def comment_delete(request, comment_id, post_id):
         messages.info(request, "You cannot delete this comment.")
         return redirect('/post/'+post_id)
 
+
 def home(request):
     context = RequestContext(request,
                        {'request': request,
@@ -169,15 +171,16 @@ def home(request):
     return render_to_response('blog/home.html',
                          context_instance=context)
 
+
 def get_category(request, category_text):
     categories = Category.objects.filter(text=category_text)
     post_ids = list(category.post_id for category in categories)
     posts = Post.objects.filter( id__in=post_ids).order_by('created_date').reverse()
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+
 def logged_out(request):
     return render(request, 'blog/logged_out.html')
-
 
 @login_required
 @transaction.atomic
@@ -202,6 +205,7 @@ def update_profile(request):
         'user_form': user_form,
     })
 
+
 def show_profile(request):
     check = Blogger.objects.filter(user_id=request.user.id).exists()
     if request.user.id and check == False:
@@ -214,13 +218,11 @@ def show_profile(request):
     return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts, 'user': user})
 
 
-
 def user_profile(request, pk):
     profile = get_object_or_404(Blogger, user_id=pk)
     posts = Post.objects.filter(author_id=pk).order_by('published_date').reverse()
     user = get_object_or_404(User, id=pk)
     return render(request, 'profiles/show_profile.html', {'profile': profile, 'posts': posts, 'user': user})
-
 
 def like(request, pk):
 # if request.method == 'POST':
