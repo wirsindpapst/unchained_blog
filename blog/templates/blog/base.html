@@ -1,51 +1,99 @@
 {% load staticfiles %}
 
-<html>
-    <head>
-        <title>Unchained</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
-    </head>
-    <body>
-        <div class="page-header">
-            <div class="dropdown">
-                <button class="dropbtn">Menu</button>
-                <div class="dropdown-content">
-                    {% if user.is_authenticated %}
-                        <a href='/profile' class='user-links'>Profile</a>
-                        <a href='/profile/edit' class='user-links'>Edit Profile</a>
-                        <a href="{% url 'post_new' %}" > New Post</a>
-                        <a href="{% url 'post_draft_list' %}"> View Drafts</a>
-                        <a href='/logout?next=/logged_out'>Log Out</a>
-                    {% else %}
-                        <a href='/accounts/register' class='user-links'>Sign up</a>
-                        <a href='/login' class='user-links'>Log in</a>
-                        <a href="{% url 'social:begin' 'facebook' %}">Log in with Facebook</a>
-                        <a href="{% url 'social:begin' 'google-oauth2' %}">Log in with Google</a>
-                    {% endif %}
-                </div>
-            </div>
-            {% if messages %}
-                <ul id='message' class="messages">
-            {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-                </ul>
-            {% endif %}
-            <h1 id='blog-title'><a href="/">Unchained</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+                    <!doctype html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+
+                        <title>Unchained</title>
+                    <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/pure-min.css">
+                    <!--[if lte IE 8]>
+                        <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+                    <![endif]-->
+                    <!--[if gt IE 8]><!-->
+                        <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+                        <link rel="stylesheet" href="{% static 'css/blog2.css' %}">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                        <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
+                        <!--<![endif]-->
+                    </head>
+                    <body>
+                      <div id="layout" class="pure-g">
+
+                          <div class="sidebar pure-u-1 pure-u-md-1-4">
+
+                            <div class="header">
+                                <h1 class="brand-title">Unchained</h1>
+                                <h2 class="brand-tagline">Your voice</h2>
+                                <!--  -->
+                                <nav class="nav">
+                                    <ul class="nav-list">
+                                      {% if user.is_authenticated %}
+                                        <li class="nav-item">
+                                          <a href='/profile' class='user-links'>Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href='/profile/edit' class='user-links'>Edit Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="{% url 'post_new' %}" > New Post</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="{% url 'post_draft_list' %}"> View Drafts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a href="{% url 'logged_out' %}">Log Out</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="nav-item">
+                                        <a href='/accounts/register' class='user-links'>Sign up</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a href='/login' class='user-links'>Log in</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a href="{% url 'social:begin' 'facebook' %}">Log in with Facebook</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a href="{% url 'social:begin' 'google-oauth2' %}">Log in with Google</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                                <!--  -->
+                            </div>
+
+                        </div>
+
+                        <div class="content pure-u-1 pure-u-md-3-4">
+                            <div>
+
+                                {% block content %}
+                                {% endblock %}
+
+
+                                </div>
+
+                                <div class="footer">
+                                    <div class="pure-menu pure-menu-horizontal">
+                                        <ul>
+                                            <li class="pure-menu-item"><a href="http://www.makersacademy.com/" class="pure-menu-link">Makers Academy</a></li>
+                                            <li class="pure-menu-item"><a href="https://github.com/Swinston88/unchained_blog" class="pure-menu-link">GitHub</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    </body>
+                    </html>
