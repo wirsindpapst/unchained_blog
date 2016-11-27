@@ -19,6 +19,7 @@
                     {% if user.is_authenticated %}
                         <a href='/profile' class='user-links'>Profile</a>
                         <a href='/profile/edit' class='user-links'>Edit Profile</a>
+                        <a href='/most_popular' class='user-links'>Most popular</a>
                         <a href="{% url 'post_new' %}" > New Post</a>
                         <a href="{% url 'post_draft_list' %}"> View Drafts</a>
                         <a href='/logout?next=/logged_out'>Log Out</a>
