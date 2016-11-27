@@ -19,19 +19,21 @@
 </div>
 <br>
 
- {% for post in posts %}
-     <div class="post">
-         <div class="date">
-             <p>posted on {{ post.published_date }}</p>
-         </div>
-         <h1><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h1>
-           {% if post.image and post.image != 'False' %}
+<div class="posts">
+    {% for post in posts %}
+    <header class="post-header">
+        <h3><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h3>
+        <p class="post-meta">
+          By <a class="post-author" href="{% url 'user_profile' pk=post.author.id %}">{{ post.author.username }}</a> on {{ post.published_date }}</p>
+        </p>
+      </header>
 
-              <img class='list-image' src="{{ post.image.url }}"/>
-
-           {% endif %}
-         <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
-     </div>
- {% endfor %}
-
+        <div class="post-description">
+          <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
+              {% if post.image and post.image != 'False' %}
+                 <img class='list-image' src="{{ post.image.url }}"/>
+              {% endif %}
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}

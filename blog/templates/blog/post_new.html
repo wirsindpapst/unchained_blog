@@ -2,13 +2,19 @@
 {% load static %}
 
 {% block content %}
-    <h1>New post</h1>
+<header class="post-header">
+  <h2 class="post-title">New post</h3>
+</header>
+<div>
+  <fieldset>
     <form method="POST" class="post-form" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" name="draft" class="save btn btn-default">Save Draft</button>
-        <button type="submit" name="publish" class="save btn btn-default">Publish Post</button>
+        <button type="submit" name="draft" class="pure-button button-xsmall">Save Draft</button>
+        <button type="submit" name="publish" class="pure-button button-xsmall">Publish Post</button>
     </form>
+  </fieldset>
+</div>
 
     <script src="{% static "javascript/post_edit.js" %}"></script>
 {% endblock %}

@@ -5,8 +5,10 @@
 {% block content %}
 {% load emoji_tags %}
 
-<div class="post">
-  <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
+<div class="posts">
+  <header class="post-header">
+    <h1>{{ post.title|emoji_replace }}</h1>
+  </header>
 
   <!-- Edit and delete post links -->
   {% if user.is_authenticated and post.author_id == user.id %}
@@ -14,11 +16,12 @@
       <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="fa fa-times"></span></a>
   {% endif %}
 
-  <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
-
+  <div class="post-description">
+    <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
     {% if post.image and post.image != 'False' %}
        <img class='detail-image' src="{{ post.image.url }}"/>
     {% endif %}
+  </div>
 </div>
 
 <!-- If post has been published  -->

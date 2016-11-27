@@ -14,6 +14,8 @@ from .forms import RegistrationForm, CommentForm, CategoryForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.template.context import RequestContext
+from django.db.models import Count
+
 
 #profile
 from .models import Blogger
@@ -222,6 +224,23 @@ def like(request, pk):
 #     likes = Like.objects.filter(post_id=pk).count()
 #     ctx = {'likes': likes}
 #     return HttpResponse(json.dumps(ctx), content_type='application/json')
-
-    new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
+    liked = Like.objects.filter(user=request.user, post_id=pk)
+    if liked:
+        liked.delete()
+    else:
+        Like.objects.create(user=request.user, post_id=pk)
+    # new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
     return redirect('post_detail', pk=pk)
+
+def unlike(request, pk):
+    liked = Like.objects.filter(user=request.user, post_id=pk)
+    if liked:
+        liked.delete()
+    return redirect('post_detail', pk=pk)
+
+def most_popular(request):
+    likes_dictionary = {}
+    posts = Post.objects.all()
+    ordered_by_likes = Post.objects.annotate(num_likes=Count('like')).order_by('-num_likes')
+    print(ordered_by_likes)
+    return render(request, 'blog/most_popular.html', {'ordered_by_likes': ordered_by_likes  })

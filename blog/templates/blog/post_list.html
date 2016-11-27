@@ -6,7 +6,7 @@
 
     {% for post in posts %}
     <header class="post-header">
-        <h2><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h2>
+        <h3><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h3>
         <p class="post-meta">
           By <a class="post-author" href="{% url 'user_profile' pk=post.author.id %}">{{ post.author.username }}</a> on {{ post.published_date }}</p>
         </p>
