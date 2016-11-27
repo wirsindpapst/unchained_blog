@@ -54,6 +54,18 @@
       <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
   {% endif %}
 
+  <!-- Add a category form -->
+{% if user.is_authenticated and post.author_id == user.id and post.published_date %}
+<div>
+  <fieldset>
+    <form method="POST" class="pure-form">{% csrf_token %}
+        {{ category_form.as_p }}
+        <button type="submit" id="add-category" class="pure-button button-xsmall">Post category</button>
+      </fieldset>
+    </form>
+</div>
+{% endif %}
+
   <!-- Show comments -->
 {% if post.published_date %}
 <h1 class="content-subhead">Comments</h1>
