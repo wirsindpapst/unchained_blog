@@ -27,4 +27,6 @@ urlpatterns = [
     url(r'^profile/$', views.show_profile, name='show_profile'),
     url(r'^profile/(?P<pk>\d+)/$', views.user_profile, name='user_profile'),
     url(r'^post/(?P<pk>\d+)/like/$', views.like, name='like'),
+    url(r'^post/(?P<pk>\d+)/unlike/$', views.like, name='unlike'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
