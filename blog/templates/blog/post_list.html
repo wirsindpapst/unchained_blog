@@ -8,7 +8,7 @@
     <header class="post-header">
         <h2><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h2>
         <p class="post-meta">
-          By <a class="post-author" href="{% url 'user_profile' pk=post.author.id %}">{{ post.author.username }}</a>on {{ post.published_date }}</p>
+          By <a class="post-author" href="{% url 'user_profile' pk=post.author.id %}">{{ post.author.username }}</a> on {{ post.published_date }}</p>
         </p>
       </header>
 

@@ -34,7 +34,7 @@
                 <ul class="nav-list">
                   {% if user.is_authenticated %}
                     <li class="nav-item">
-                      <a href='/profile' class='user-links'>Profile</a>
+                      <a href='/profile' class='user-links'>View Profile</a>
                     </li>
                     <li class="nav-item">
                       <a href='/profile/edit' class='user-links'>Edit Profile</a>
@@ -43,7 +43,7 @@
                       <a href="{% url 'post_new' %}" > New Post</a>
                     </li>
                     <li class="nav-item">
-                      <a href="{% url 'post_draft_list' %}"> View Drafts</a>
+                      <a href="{% url 'post_draft_list' %}"> Drafts</a>
                     </li>
                     <li class="nav-item">
                       <a href='/logout?next=/logged_out'>Log Out</a>
