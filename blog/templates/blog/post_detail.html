@@ -4,81 +4,102 @@
 
 {% block content %}
 {% load emoji_tags %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                <p>{{ post.published_date }} </p>
-                <p>{{ post.author.username }} </p>
-                <p>Categories:
-                  {% for category in categories %}
-                    <a href="{% url 'get_category' category_text=category.text %}">{{ category.text }}</a>
-                  {% endfor %}
-                </p>
-                <p> {{ post.published_date }} </p>
-                <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a></p>
-            </div>
-        {% else %}
-            {% if user.is_authenticated and post.author_id == user.id %}
-                <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-            {% endif %}
-        {% endif %}
-        {% if user.is_authenticated and post.author_id == user.id %}
-            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% endif %}
-        <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
-        {% if post.image and post.image != 'False' %}
-           <img class='detail-image' src="{{ post.image.url }}"/>
-        {% endif %}
-        <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
-        <p>Likes: {{ likes }}</p>
-        {% if user.is_authenticated %}
-        <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
-        {% endif %}
-        {% if post.published_date %}
-            <p>{% post_to_facebook object_or_url "Post to Facebook!" %}</p>
-            <p>{% post_to_twitter object_or_url "" %}</p>
-            <p>{% send_email 'Look at this amazing post' "Check out this post! {{post.title}}. It's amazing!" object_or_url "Share via email" %}</p>
+
+<div class="post">
+  <h1 id="post-detail-title">{{ post.title|emoji_replace }}</h1>
+
+  <!-- Edit and delete post links -->
+  {% if user.is_authenticated and post.author_id == user.id %}
+      <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil-square-o  "></i></a>
+      <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="fa fa-times"></span></a>
+  {% endif %}
+
+  <h3> {{ post.text|linebreaksbr|emoji_replace }}</h3>
+
+    {% if post.image and post.image != 'False' %}
+       <img class='detail-image' src="{{ post.image.url }}"/>
+    {% endif %}
+</div>
+
+<!-- If post has been published  -->
+{% if post.published_date %}
+    <div class="date">
+        <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a> posted on {{ post.published_date }}</p>
+        <p>Category:
+          {% for category in categories %}
+            <a href="{% url 'get_category' category_text=category.text %}">{{ category.text }}</a>
+          {% endfor %}
+        </p>
     </div>
+{% endif %}
+
+{% if post.published_date %}
+  <!-- Likes  -->
+  <div class="likes">
+    <p>Likes: {{ likes }}</p>
+      {% if user.is_authenticated %}
+        <a class="like-btn btn btn-default" href="{% url 'like' pk=post.pk %}" name="{{ post.pk }}">Like</a>
+      {% endif %}
+    </div>
+  <!-- Shares -->
+  <div class="pure-g">
+    <div class="pure-u-1-3"><p>{% post_to_facebook object_or_url "Post to Facebook" %}</p></div>
+    <div class="pure-u-1-3"><p>{% post_to_twitter object_or_url "" %}</p></div>
+    <div class="pure-u-1-3"><p>{% send_email 'Look at this amazing post' "Check out this post! {{post.title}}. It's amazing!" object_or_url "Share via email" %}</p></div>
+  </div>
+{% endif %}
+
+  <!-- If post is in draft -->
+  {% if user.is_authenticated and post.author_id == user.id and not post.published_date %}
+      <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+  {% endif %}
+
+  <!-- Add a category form -->
+{% if user.is_authenticated and post.author_id == user.id and post.published_date %}
+<div>
+  <fieldset>
+    <form method="POST" class="pure-form">{% csrf_token %}
+        {{ category_form.as_p }}
+        <button type="submit" id="add-category" class="pure-button button-xsmall">Post category</button>
+      </fieldset>
+    </form>
+</div>
+{% endif %}
+
+  <!-- Show comments -->
+{% if post.published_date %}
+<h1 class="content-subhead">Comments</h1>
+  {% for comment in comments %}
+    <div class="comments">
+      <div id="comment-body">
+          <h4>{{ comment.body|linebreaksbr|emoji_replace }}</h4>
+      </div>
+      <div class="comment-details" style="padding-top:15">
+          <h6>{{ comment.author.username }} <small> {{ comment.created_date }}</small></h6>
+      </div>
+
+      <div>{% if comment.author_id == user.id or post.author_id == user.id %}
+          <h6><a class="btn btn-default" href="{% url 'comment_delete' post_id=post.pk comment_id=comment.pk %}">Delete Comment</a></h6>
+          {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<!-- Add comment form -->
+{% if user.is_authenticated and post.published_date %}
+  <div>
+    <fieldset>
+      <form class="pure-form" method="POST"> {% csrf_token %}
+          {{ comment_form.as_p }}
+          <button type="submit" id="add-comment" class="pure-button button-xsmall">Post comment</button>
+        </fieldset>
+      </form>
+  </div>
+{% endif %}
 
 
-    {% for comment in comments %}
-        <div class="comments">
-            <div class="comment-details" style="padding-top:15">
-                <h6>{{ comment.author.username }} commented</h6>
-                <h6>on {{ comment.created_date }}</h6>
-            </div>
-            <div id="comment-body">
-                <h4>{{ comment.body|linebreaksbr|emoji_replace }}</h4>
-            </div>
-            <div style="display: inline-block">{% if comment.author_id == user.id or post.author_id == user.id %}
-                <a class="btn btn-default" href="{% url 'comment_delete' post_id=post.pk comment_id=comment.pk %}">Delete Comment</a>
-            </div>
-            {% endif %}
-
-        </div>
-    {% endfor %}
-    {% endif %}
-
-    {% if user.is_authenticated %}
-        <h1>Add a category</h1>
-        <form method="POST" class="category-form">{% csrf_token %}
-            {{ category_form.as_p }}
-            <button type="submit" class="save btn btn-default">Post category</button>
-        </form>
-    {% endif %}
-
-    {% if user.is_authenticated %}
-        <h1>Add a comment</h1>
-        <form method="POST" class="comment-form">{% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit" class="save btn btn-default">Post comment</button>
-        </form>
-        <div>
-        </div>
-    {% endif %}
-    <!-- <script src="{% static "javascript/like.js" %}"></script> -->
-
-    <script src="{% static "javascript/post_detail.js" %}"></script>
+<script src="{% static 'javascript/like.js' %}"></script>
+<script src="{% static 'javascript/post_detail.js' %}"></script>
 
 {% endblock %}

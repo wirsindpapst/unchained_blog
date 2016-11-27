@@ -78,6 +78,10 @@ h1, h2, h3, h4 {
   display: none;
 }
 
+.category-form {
+  display: none;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #4CAF50;
