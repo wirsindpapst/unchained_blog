@@ -74,10 +74,14 @@ def post_detail(request, pk):
         categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
         category_form = CategoryForm()
-        if not comments:
-            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
+        if request.user.is_authenticated():
+            liked = Like.objects.filter(user=request.user, post_id=pk)
         else:
-            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes})
+            liked = False
+        if not comments:
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes, 'liked': liked})
+        else:
+            return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comments': comments, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes, 'liked': liked})
 
 
 def post_new(request):
