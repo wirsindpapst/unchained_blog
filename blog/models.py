@@ -28,6 +28,8 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    likes = models.ManyToManyField("Like", related_name = "post_likes")
+
 
     def publish(self):
         self.published_date = timezone.now()

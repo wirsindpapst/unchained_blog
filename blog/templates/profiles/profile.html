@@ -2,11 +2,15 @@
 {% load emoji_tags %}
 {% load static %}
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
+<div>
+  <fieldset>
+    <form method="post" class="pure-form" enctype="multipart/form-data">
       {% csrf_token %}
       {{ user_form.as_p }}
       {{ profile_form.as_p }}
-      <button type="submit">Save changes</button>
-    <script src="{% static "javascript/profile_edit.js" %}"></script>
+      <button type="submit" class="pure-button button-xsmall">Save changes</button>
+    <script src="{% static 'javascript/profile_edit.js' %}"></script>
     </form>
+  </fieldset>
+</div>
 {% endblock %}

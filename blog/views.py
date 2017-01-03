@@ -14,6 +14,8 @@ from .forms import RegistrationForm, CommentForm, CategoryForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.template.context import RequestContext
+from django.db.models import Count
+
 
 #profile
 from .models import Blogger
@@ -73,6 +75,10 @@ def post_detail(request, pk):
         categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
         category_form = CategoryForm()
+        if request.user.is_authenticated():
+            liked = Like.objects.filter(user=request.user, post_id=pk)
+        else:
+            liked = False
         if not comments:
             return render(request, 'blog/post_detail.html', {'post': post, 'categories': categories, 'comment_form': comment_form, 'category_form': category_form, 'likes': likes, 'liked': liked})
         else:
@@ -236,3 +242,10 @@ def unlike(request, pk):
     if liked:
         liked.delete()
     return redirect('post_detail', pk=pk)
+
+def most_popular(request):
+    likes_dictionary = {}
+    posts = Post.objects.all()
+    ordered_by_likes = Post.objects.annotate(num_likes=Count('like')).order_by('-num_likes')
+    print(ordered_by_likes)
+    return render(request, 'blog/most_popular.html', {'ordered_by_likes': ordered_by_likes  })

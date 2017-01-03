@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^profile/(?P<pk>\d+)/$', views.user_profile, name='user_profile'),
     url(r'^post/(?P<pk>\d+)/like/$', views.like, name='like'),
     url(r'^post/(?P<pk>\d+)/unlike/$', views.like, name='unlike'),
+    url(r'^most_popular/$', views.most_popular, name='most_popular')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

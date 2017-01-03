@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load emoji_tags %}
+{% load static %}
+
+{% block content %}
+
+
+{% for post in ordered_by_likes  %}
+
+<div class="post">
+  <div class="date">
+    <header class="post-header">
+      <h2><a class="post-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title|emoji_replace }}</a></h2>
+      <p class="post-meta">
+        By <a class="post-author" href="{% url 'user_profile' pk=post.author.id %}">{{ post.author.username }}</a> on {{ post.published_date }}</p>
+      </p>
+    </header>
+    <p>Likes: {{ post.num_likes }}</p>
+    <div class="post-description">
+      <p>{{ post.text|linebreaksbr|emoji_replace }}</p>
+          {% if post.image and post.image != 'False' %}
+             <img class='list-image' src="{{ post.image.url }}"/>
+          {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+    
