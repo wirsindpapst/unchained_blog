@@ -17,6 +17,7 @@
               {% if post.image and post.image != 'False' %}
                  <img class='list-image' src="{{ post.image.url }}"/>
               {% endif %}
+            <p>{{ post.summary|linebreaksbr|emoji_replace }}</p>
         </div>
     {% endfor %}
 </div>

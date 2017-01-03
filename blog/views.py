@@ -70,7 +70,6 @@ def post_detail(request, pk):
     else:
         post = get_object_or_404(Post, pk=pk)
         likes = Like.objects.filter(post_id=pk).count()
-        liked = Like.objects.filter(user=request.user, post_id=pk)
         comments = Comment.objects.filter(post_id=pk)
         categories = Category.objects.filter(post_id=pk)
         comment_form = CommentForm()
@@ -92,6 +91,11 @@ def post_new(request):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
+                post_summary_array = []
+                post_summary_array.append(post.text[:95])
+                post_summary_array.append("... ")
+                post_summary = " ".join(post_summary_array)
+                post.summary = post_summary
                 post.image = form.cleaned_data['image']
                 if 'draft' in request.POST:
                     post.save()
@@ -113,6 +117,11 @@ def post_edit(request, pk):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
+                post_summary_array = []
+                post_summary_array.append(post.text[:95])
+                post_summary_array.append("... ")
+                post_summary = " ".join(post_summary_array)
+                post.summary = post_summary
                 post.image = form.cleaned_data['image']
                 post.save()
                 return redirect('post_detail', pk=post.pk)
